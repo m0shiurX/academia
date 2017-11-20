@@ -1,6 +1,6 @@
 {
   "name": "academia",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Academia is a project to maintain academic studies and teacher-student colleboration for managing whole faculty staff regarding studies.",
   "main": "index.js",
   "scripts": {
