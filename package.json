@@ -1,0 +1,32 @@
+{
+  "name": "academia",
+  "version": "0.0.0",
+  "description": "Academia is a project to maintain academic studies and teacher-student colleboration for managing whole faculty staff regarding studies.",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/unimrgm/academia.git"
+  },
+  "keywords": [
+    "class",
+    "management",
+    "academic",
+    "studies",
+    "class",
+    "room"
+  ],
+  "author": "Arka Sarkar Amit, Md Moshiur Rahman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unimrgm/academia/issues"
+  },
+  "homepage": "https://github.com/unimrgm/academia#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}
