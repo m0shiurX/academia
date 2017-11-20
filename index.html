@@ -8,17 +8,41 @@
     <style>
         body{
             display: flex;
+            height:80vh;
+            background: #e2e2e2;
+        }
+        .content{
+            margin: auto;
+            display: flex;
+            flex-direction: column;
         }
         .btn{
+            font-size: 1.4em;            
+            margin: 0 auto;
+            text-align: center;
             text-decoration: none;
-            margin: auto;
             padding: 15px 45px;
+            border: 2px solid #1c1c1c;
+            color:#1c1c1c;
+            transition:all 0.5s ease-in-out;
+        }
+        .btn:hover{
+            color: #FFF;
+            background: #1c1c1c;
+            transform: scale(1.15,1.15);
+        }
+        p{
+            font-size: 1.8em;
+            paddi1: 2em;
+            text-align: justify;
         }
     </style>
 </head>
 <body>
-
-    <a class="btn" href="src">Enter</a>
+    <div class="content">
+        <a class="btn" href="src">Explore</a>
+        <p>We are creating something that makes values ! </p>
+    </div>
     
 </body>
 </html>

@@ -8,5 +8,5 @@ Academia is created to manage class materials among teachers and students.
   #### Open configuration file and put your credentials
 
 ## Run:
-  #### runs this commands
-    `npm start`
+  #### Runs this commands
+    npm start
