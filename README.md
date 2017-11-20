@@ -9,6 +9,4 @@ Academia is created to manage class materials among teachers and students.
 
 ## Run:
   #### runs this commands
-    ```
-    npm start
-    ```
+    `npm start`
