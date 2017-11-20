@@ -3,7 +3,57 @@
     padding: 0;
     box-sizing: border-box;
 }
+.login-container{
+    height: 100vh;
+    background: #1A535C;    
+    margin: 0 auto;
+    width: 100%;
+    .logo{
+        width: 250px;
+        margin: auto;
+        height: 280px;
+        background: #fff;
+        border-radius: 0 0 230px 230px;
+        img{
+            margin-top: 25px;
+            width:100%;
+            height: auto;
+        }
+    }
+    h1 {
+        text-align: center;
+        font-size: 2em;
+        color: white;
+        margin: 100px 0 0 0;
+    }
+    .buttons{
+        margin: 100px auto;
+        text-align: center;
+        .btn {
+            text-decoration: none;
+            padding: 15px 50px;
+            background: tomato;
+            color: white;
+            border-radius: 3px;
+            display: inline-block;
+            transition: all .25s ease-in-out;
+            &:hover{
+                transform: scale(1.15,1.15);
+            }
+            &:first-child {
+                background: teal;
+                margin-right: 50px;
+            }
+        }
+    }
+}
 
-body{
 
+
+
+@media screen and (max-width:600px) {
+    a.btn{
+        display: block;
+        margin: 10px 15px !important;
+    }
 }
