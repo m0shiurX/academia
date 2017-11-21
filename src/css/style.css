@@ -114,6 +114,13 @@
   .container .side-bar {
     grid-area: side-bar;
     background: #7b7b7b; }
+    .container .side-bar .top-sidebar {
+      height: 3em;
+      background-color: #fff; }
+      .container .side-bar .top-sidebar h3 {
+        margin-top: 10px;
+        font-size: 1.5em;
+        text-align: left; }
     .container .side-bar .ranking .person {
       list-style: none;
       padding: 1em;

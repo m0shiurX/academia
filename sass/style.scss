@@ -148,6 +148,15 @@ $light: #fff;
     grid-area: side-bar;
     // styles
     background: $secondary;
+    .top-sidebar{
+      h3{
+        margin-top:10px;
+        font-size: 1.5em;
+        text-align: left;
+      }
+      height: 3em;
+      background-color: #fff;
+    }
     .ranking{
         .person{
           list-style: none;
