@@ -1,75 +1,233 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+// Variables
+$primary: teal;
+$secondary: #7b7b7b;
+$dark: #1c1c1c;
+$light: #fff;
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 .login-container{
-    height: 100vh;
-    background: #1A535C;    
-    margin: 0 auto;
-    width: 100%;
-    .logo{
-        width: 250px;
-        margin: auto;
-        height: 280px;
-        background: #fff;
-        border-radius: 0 0 230px 230px;
-        img{
-            margin-top: 25px;
-            width:100%;
-            height: auto;
-        }
-    }
-    h1 {
-        text-align: center;
-        font-size: 2em;
-        color: white;
-        margin: 100px 0 0 0;
-    }
-    .buttons{
-        margin: 100px auto;
-        text-align: center;
-        .btn {
-            text-decoration: none;
-            padding: 15px 50px;
-            background: tomato;
-            color: white;
-            border-radius: 3px;
-            display: inline-block;
-            transition: all .25s ease-in-out;
-            &:hover{
-                transform: scale(1.15,1.15);
-            }
-            &:first-child {
-                background: teal;
-                margin-right: 50px;
-            }
-        }
-    }
-    .form-group{
-        margin: 5% auto;
-        text-align: center;
-        input{
-            padding: 15px 25px;
-            display: block;
-            margin: 10px auto;
-            border: none;
-        }
-        button{
-            padding: 15px 60px;
-            color: #FFF;
-            border: none; //2px solid #fff;
-            background: #1c1c1c;
-            transition: all .25s ease-in-out;
-            &:hover{
+  height: 100vh;
+  background: #1A535C;    
+  margin: 0 auto;
+  width: 100%;
+  .logo{
+      width: 250px;
+      margin: auto;
+      height: 280px;
+      background: #fff;
+      border-radius: 0 0 230px 230px;
+      img{
+          margin-top: 25px;
+          width:100%;
+          height: auto;
+      }
+  }
+  h1 {
+      text-align: center;
+      font-size: 2em;
+      color: white;
+      margin: 100px 0 0 0;
+  }
+  .buttons{
+      margin: 100px auto;
+      text-align: center;
+      .btn {
+          text-decoration: none;
+          padding: 15px 50px;
+          background: tomato;
+          color: white;
+          border-radius: 3px;
+          display: inline-block;
+          transition: all .25s ease-in-out;
+          &:hover{
               transform: scale(1.15,1.15);
-            }
-        }
+          }
+          &:first-child {
+              background: teal;
+              margin-right: 50px;
+          }
+      }
+  }
+  .form-group{
+      margin: 5% auto;
+      text-align: center;
+      input{
+          padding: 15px 25px;
+          display: block;
+          margin: 10px auto;
+          border: none;
+      }
+      button{
+          padding: 15px 60px;
+          color: #FFF;
+          border: none; //2px solid #fff;
+          background: #1c1c1c;
+          transition: all .25s ease-in-out;
+          &:hover{
+            transform: scale(1.15,1.15);
+          }
+      }
+  }
+}
+
+.container{
+  display: grid;
+  grid-template-columns: .5fr 3fr 1fr;
+  grid-template-rows: 8% auto;
+  grid-template-areas: "header header header" "menu main side-bar";
+  height: 100vh;
+  width: 100%;
+  font-family: Raleway;
+  
+  .top-bar{
+    grid-area: header;
+    // styles
+    background: $primary;
+    padding: 1em;
+    h1{
+      color:$light;
+      font-weight: 600;
+      margin-left: 250px;
     }
   }
-@media screen and (max-width:600px) {
-    a.btn{
-        display: block;
-        margin: 10px 15px !important;
+  .floating-menu{
+    grid-area: menu;
+    position: absolute;
+    top:0;
+    left: 20px;
+    z-index: 1;
+    // styles
+    background: $dark;
+    width: 200px;
+    height: 70%;
+    border-radius: 0 0 100px 100px;
+    .logo{
+      padding: 1em;
+      .box{
+        margin: auto;
+        height:100px;
+        width:100px;
+        background: $primary;
+      }
     }
+    .f-menu{
+      list-style: none;
+      margin-top:50px;
+      li {
+        border-bottom: .5px solid $secondary;
+        line-height: 2.5em;
+        transition: all .8s ease-in-out;
+        &:hover{
+          background-color: $light;
+           a{
+            color: $dark;
+            font-weight: 600;
+          }
+        }
+        a {
+          padding-left: 2em;
+          font-size: 1.2em;
+          text-decoration: none;
+          color: $light;
+        }
+      } 
+    }
+  }
+  main{
+    grid-area: main;
+    // styles
+    background: $light;
+    padding: 1em;
+    
+  }
+  .side-bar{
+    grid-area: side-bar;
+    // styles
+    background: $secondary;
+    .ranking{
+        .person{
+          list-style: none;
+          padding: 1em;
+          line-height: 1em;
+          li{
+            margin-bottom: 15px;
+            text-decoration: none;
+            text-align: left;
+            text-align-last: left;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            p{
+              font-size: 1.3em;
+              margin-left: 10px;
+              width: 70%;
+              color: $light;
+            }
+            .box{
+              height: 64px;
+              width:64px;
+              background-color: purple;
+            }
+            .circle{
+              height: 64px;
+              width:64px;
+              border-radius: 50%;
+              background-color: tomato;
+              display: flex;
+              span{
+                margin: auto;
+                font-weight: 600;
+                color: $light;
+              }
+            }
+          }
+        }
+    }
+    .newsfeed{
+      // display: none;
+      .news{
+        list-style: none;
+        padding: 1em;
+        line-height: 1em;
+        li{
+          margin-bottom: 15px;
+          text-decoration: none;
+          text-align: left;
+          text-align-last: left;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          p{
+            margin-right: 5px;
+            width: 70%;
+            color: $light;
+            span{
+              font-style: italic;
+              font-size: .8em;
+              color: rgb(170, 170, 170);
+            }
+          }
+          .box{
+            height: 64px;
+            width:64px;
+            background-color: #1A535C;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+
+@media screen and (max-width:600px) {
+  a.btn{
+      display: block;
+      margin: 10px 15px !important;
+  }
 }
