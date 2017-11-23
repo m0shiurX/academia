@@ -8,9 +8,8 @@
 			$this->dbh = $db->dbh;
 		}
 
-		public function loginAdmin($user_name, $user_pwd)
-		{
-			$request = $this->dbh->prepare("SELECT name, password FROM accounts WHERE name = ?");
+		public function loginAdmin($user_name, $user_pwd){
+			$request = $this->dbh->prepare("SELECT username, password FROM accounts WHERE username = ?");
 	        if($request->execute( array($user_name) ))
 	        {
 	        	$data = $request->fetchAll();
@@ -21,21 +20,18 @@
 	        }
 
 		}
-		public function adminExists( $user_name )
-		{
-			$request = $this->dbh->prepare("SELECT user_name FROM kp_dist WHERE user_name = ?");
+		public function adminExists( $user_name ){
+			$request = $this->dbh->prepare("SELECT username FROM accounts WHERE user_name = ?");
 			$request->execute([$user_name]);
 			$Admindata = $request->fetchAll();
 			return sizeof($Admindata) != 0;
 		}
-		public function ArepasswordSame( $user_pwd1, $user_pwd2 )
-		{
+		public function ArepasswordSame( $user_pwd1, $user_pwd2 ){
 			return strcmp( $user_pwd1, $user_pwd2 ) == 0;
         }
         
 
-        public function addNewAdmin($user_name, $user_pwd, $email, $full_name, $address, $contact)
-		{
+        public function addNewAdmin($user_name, $user_pwd, $email, $full_name, $address, $contact){
 			$request = $this->dbh->prepare("INSERT INTO kp_user (user_name, user_pwd, email, full_name, address, contact) VALUES(?,?,?,?,?,?) ");
 			return $request->execute([$user_name, session::hashPassword($user_pwd), $email, $full_name, $address, $contact]);
 		}
