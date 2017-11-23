@@ -34,6 +34,7 @@
                 <li><a href="semisterOne.html">Fifth Semister</a></li>
                 <li><a href="semisterOne.html">Sixth Semister</a></li>
                 <li><a href="semisterOne.html">Seventh Semister</a></li>
+                <li><a class="activated" href="#">Add New <span></span></a></li>
             </ul>
         </div>
         <main>

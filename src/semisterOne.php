@@ -41,6 +41,13 @@
             <div class="objects">
                 <div class="card">
                     <a href="#">
+                        <div class="card-placeholder">
+                            <img src="assets/plus.png" alt="Orange" />
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
                         <div class="card-image">
                             <img src="assets/orange.jpg" alt="Orange" />
                         </div>
@@ -73,6 +80,66 @@
                     <a href="#">
                         <div class="card-image">
                             <img src="assets/butt.jpg" alt="Orange" />
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h3>Chapter One</h3>
+                            </div>
+                            <div class="card-excerpt">
+                                <p>The chapter is about Cryptography</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="card-image">
+                            <img src="assets/ph.jpg" alt="Orange" />
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h3>Chapter One</h3>
+                            </div>
+                            <div class="card-excerpt">
+                                <p>The chapter is about Cryptography</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="card-image">
+                            <img src="assets/ph.jpg" alt="Orange" />
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h3>Chapter One</h3>
+                            </div>
+                            <div class="card-excerpt">
+                                <p>The chapter is about Cryptography</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="card-image">
+                            <img src="assets/ph.jpg" alt="Orange" />
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h3>Chapter One</h3>
+                            </div>
+                            <div class="card-excerpt">
+                                <p>The chapter is about Cryptography</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="card-image">
+                            <img src="assets/ph.jpg" alt="Orange" />
                         </div>
                         <div class="card-body">
                             <div class="card-title">

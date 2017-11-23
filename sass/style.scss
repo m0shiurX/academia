@@ -189,7 +189,6 @@ $image-height: 250px;
           a{
            	background-color: $dark_primary;
             box-shadow:inset 5px 0 0 -1px $other;
-            
           }
         }
         a {
@@ -202,6 +201,15 @@ $image-height: 250px;
           text-indent: 20px;
           text-transform: capitalize;
           transition: all .5s ease-in;
+          &.activated{
+             background-color: $dark_primary;
+             &:hover{
+               background-color: $primary;
+             }
+             ::before{
+              content: "+";
+             }
+          }
         }
       }
     }
@@ -221,47 +229,65 @@ $image-height: 250px;
     }
     // Card layout
     .card {
-      width: 350px;
+      width: 340px;
       background-color:white;
       box-shadow: 0px 5px 10px rgba(85, 85, 85, 0.5);
-      margin: 1em 0;
+      margin: 2px 1px;
     
       a {
       color: #333;
       text-decoration:none;
       }
       
-      &:hover {  
+      &:hover {
         .card-image {
           img {
             width: $image-size+10%;
             filter:grayscale(0);
-          }  
+          }
+        }
+        .card-placeholder {
+          img {
+            width: $image-size+30%;
+            filter:blur(0);
+          }
         }
       }
-    }
-
     .card-image {
-      height: 200px;
-      position:relative;
-      overflow:hidden;
-      img {
-        width: $image-size;
-        position:absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        filter: grayscale(1);
-        transition-property: filter width;
-        transition-duration: .3s; 
-      }
+        height: 200px;
+        position:relative;
+        overflow:hidden;
+        img {
+          width: $image-size;
+          position:absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          filter: grayscale(1);
+          transition-property: filter width;
+          transition-duration: .3s;
+        }
     }
-
+    .card-placeholder {
+        height: 100%;
+        position:relative;
+        overflow:hidden;
+        background:rgb(255, 255, 255);
+        img {
+          width: $image-size;
+          position:absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          filter: blur(2px);
+          transition-property: filter width;
+          transition-duration: .3s;
+        }
+    }
     .card-body {
       text-align:left; 
       padding: 1em 1em; 
     }
-
     .card-title {
       text-align:left;
       text-transform:uppercase;
@@ -271,6 +297,7 @@ $image-height: 250px;
    .card-excerpt {
       color: #777;
     }
+  }
     
   }
   .side-bar{

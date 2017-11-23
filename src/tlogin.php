@@ -13,7 +13,7 @@
             <img src="assets/logo.png" alt="CSE">
         </div>
 
-        <form action="">
+        <form action="tdashboard.html">
             <div class="form-group">
                 <input type="text" placeholder="Username"> 
                 <input type="password" placeholder="Password">
