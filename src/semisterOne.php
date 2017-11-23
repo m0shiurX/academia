@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Dashboard | Academia</title>
-</head>
-<body>
+<?php include("components/header.php"); ?>
     <div class="container">
         <div class="top-bar">
             <h1 class="title">Academia | itGeeks </h1>
@@ -16,26 +7,10 @@
             <div class="logo">
                 <div class="box"></div>
             </div>
-            <ul class="f-menu">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="classroom.html">Class Room</a></li>
-                <li><a href="teachers.html">Teacher</a></li>
-                <li><a href="library.html">library</a></li>
-                <li><a href="notebook.html">Notebook</a></li>
-                <li><a href="others.html">Others</a></li>
-            </ul>
+            <?php include("components/floatingmenu.php"); ?>
         </div>
         <div class="menu-bar">
-            <ul class="f-menu">
-                <li><a href="subjectOne.html">Subject One</a></li>
-                <li><a href="semisterOne.html">Subject Two</a></li>
-                <li><a href="semisterOne.html">Subject One</a></li>
-                <li><a href="semisterOne.html">Subject Two</a></li>
-                <li><a href="semisterOne.html">Subject One</a></li>
-                <li><a href="semisterOne.html">Subject Two</a></li>
-                <li><a href="semisterOne.html">Subject One</a></li>
-                <li><a href="semisterOne.html">Subject Two</a></li>
-            </ul>
+        <?php include("components/menu.php"); ?>
         </div>
         <main>
             <div class="objects">
@@ -172,47 +147,7 @@
             <div class="top-sidebar">
                 <div class="title">Subjects and Contents :</div>
             </div>
-            <div class="ranking">
-                <ul class="person">
-                    <li>
-                        <div class="box"><img src="assets/prof.jpg" alt="" srcset=""></div>
-                        <p>Bristy Keygen</p>
-                        <div class="circle"><span>50</span></div>
-                    </li>
-                    <li>
-                        <div class="box"><img src="assets/prof.jpg" alt="" srcset=""></div>
-                        <p>Bristy Keygen</p>
-                        <div class="circle"><span>50</span></div>
-                    </li>
-                    <li>
-                        <div class="box"><img src="assets/prof.jpg" alt="" srcset=""></div>
-                        <p>Bristy Keygen</p>
-                        <div class="circle"><span>50</span></div>
-                    </li>
-                    <li>
-                        <div class="box"><img src="assets/prof.jpg" alt="" srcset=""></div>
-                        <p>Bristy Keygen</p>
-                        <div class="circle"><span>50</span></div>
-                    </li>
-                    <li>
-                        <div class="box"><img src="assets/prof.jpg" alt="" srcset=""></div>
-                        <p>Bristy Keygen</p>
-                        <div class="circle"><span>50</span></div>
-                    </li>
-                    <li>
-                        <div class="box"><img src="assets/prof.jpg" alt="" srcset=""></div>
-                        <p>Bristy Keygen</p>
-                        <div class="circle"><span>50</span></div>
-                    </li>
-                    <li>
-                        <div class="box"><img src="assets/prof.jpg" alt="" srcset=""></div>
-                        <p>Bristy Keygen</p>
-                        <div class="circle"><span>50</span></div>
-                    </li>
-
-                </ul>
-            </div>
+            <?php include("components/ranking.php"); ?>
         </div>
     </div>
-</body>
-</html>
+<?php include("components/footer.php"); ?>

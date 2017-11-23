@@ -14,8 +14,8 @@
         </div>
         <h1>I am</h1>
         <div class="buttons">
-            <a href="tlogin.html" class="btn">Teacher</a>
-            <a href="slogin.html" class="btn">Student</a>
+            <a href="tlogin.php" class="btn">Teacher</a>
+            <a href="login.php" class="btn">Student</a>
         </div>
     </div>
     <script src="js/main.js"></script>

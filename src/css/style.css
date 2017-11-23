@@ -69,11 +69,25 @@
     background: #1A535C;
     padding: 1em;
     z-index: 2;
-    box-shadow: 0 1px 5px #000000; }
+    box-shadow: 0 1px 5px #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
     .container .top-bar h1 {
       color: #fff;
       font-weight: 600;
       margin-left: 300px; }
+    .container .top-bar span {
+      font-size: 1.2em;
+      text-transform: capitalize;
+      color: #fff; }
+      .container .top-bar span .box {
+        margin-left: 5px;
+        overflow: hidden; }
+        .container .top-bar span .box img {
+          border-radius: 5px;
+          width: 36px;
+          height: 36px; }
   .container .floating-menu {
     display: block;
     grid-area: header;
