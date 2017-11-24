@@ -43,6 +43,11 @@
   .login-container .form-group {
     margin: 5% auto;
     text-align: center; }
+    .login-container .form-group .warning {
+      color: #fff; }
+      .login-container .form-group .warning span {
+        padding-left: 5px;
+        border-left: 2px solid tomato; }
     .login-container .form-group input {
       padding: 15px 25px;
       display: block;

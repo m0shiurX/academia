@@ -8,7 +8,7 @@
 			$this->dbh = $db->dbh;
 		}
 
-		public function loginAdmin($user_name, $user_pwd){
+		public function login($user_name, $user_pwd){
 			$request = $this->dbh->prepare("SELECT username, password FROM accounts WHERE username = ?");
 	        if($request->execute( array($user_name) ))
 	        {
@@ -20,37 +20,46 @@
 	        }
 
 		}
-		public function adminExists( $user_name ){
+
+		public function exists( $user_name ){
 			$request = $this->dbh->prepare("SELECT username FROM accounts WHERE user_name = ?");
 			$request->execute([$user_name]);
 			$Admindata = $request->fetchAll();
 			return sizeof($Admindata) != 0;
 		}
+
 		public function ArepasswordSame( $user_pwd1, $user_pwd2 ){
 			return strcmp( $user_pwd1, $user_pwd2 ) == 0;
         }
         
-
-        public function addNewAdmin($user_name, $user_pwd, $email, $full_name, $address, $contact){
-			$request = $this->dbh->prepare("INSERT INTO kp_user (user_name, user_pwd, email, full_name, address, contact) VALUES(?,?,?,?,?,?) ");
+        public function addAccount($user_name, $user_pwd, $email, $full_name, $address, $contact){
+			$request = $this->dbh->prepare("INSERT INTO accounts (user_name, user_pwd, email, full_name, address, contact) VALUES(?,?,?,?,?,?) ");
 			return $request->execute([$user_name, session::hashPassword($user_pwd), $email, $full_name, $address, $contact]);
 		}
-		public function fetchAdmin($limit = 10)
-		{
-			$request = $this->dbh->prepare("SELECT * FROM kp_user  ORDER BY user_id DESC  LIMIT $limit");
+
+		public function fetchAllAccounts($limit = 10){
+			$request = $this->dbh->prepare("SELECT * FROM accounts  ORDER BY id DESC  LIMIT $limit");
 			if ($request->execute()) {
 				return $request->fetchAll();
 			}
 			return false;
 		}
-		public function updateAdmin($id, $user_name, $email, $full_name, $address, $contact)
-		{
-			$request = $this->dbh->prepare("UPDATE kp_user SET user_name =?, email =?, full_name =?, address= ?, contact =? WHERE user_id =?");
+		
+		public function fetchAccountDetails($username){
+			$request = $this->dbh->prepare("SELECT * FROM accounts  where username = ? AND status = 1 LIMIT 1");
+			if ($request->execute([$username])) {
+				return $request->fetch();
+			}
+			return false;
+		}
+
+		public function updateAccount($id, $user_name, $email, $full_name, $address, $contact){
+			$request = $this->dbh->prepare("UPDATE accounts SET username =?, email =?, fullname =?, address= ?, contact =? WHERE user_id =?");
 			return $request->execute([$user_name, $email, $full_name, $address, $contact, $id]);
 		}
-		public function deleteAdmin($id)
-		{
-			$request = $this->dbh->prepare("DELETE FROM kp_user WHERE user_id = ?");
+
+		public function deleteAdmin($id){
+			$request = $this->dbh->prepare("DELETE FROM accounts WHERE id = ?");
 			return $request->execute([$id]);
 		}
     }

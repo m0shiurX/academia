@@ -16,6 +16,12 @@
         <main>
             <div class="objects">
                 <p><?php echo $_SESSION['user']; ?></p>
+                <p><?php echo $_SESSION['role']; ?></p>
+                <p><?php echo $_SESSION['fullname']; ?></p>
+                <p><?php echo $_SESSION['address']; ?></p>
+                <p><?php echo $_SESSION['contact']; ?></p>
+                <p><?php echo $_SESSION['session_id']; ?></p>
+                <p><?php echo $_SESSION['semister_id']; ?></p>
             </div>
         </main>
         <div class="side-bar">
