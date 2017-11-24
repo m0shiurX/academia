@@ -17,24 +17,24 @@
         <main>
             <div class="objects">
                 <?php 
-                    require_once "libs/chapter.php";
-                    $chapters = new Chapter($dbh);
+                    require_once "libs/article.php";
+                    $articles = new Article($dbh);
                     if (isset($_GET['id'])) {
                         $id = $_GET['id'];
-                        $chapters = $chapters->fetchChapterBySubject($id);
-                        if (isset($chapters) && sizeof($chapters) > 0){
-                            foreach ($chapters as $chapter) { ?>
+                        $articles = $articles->fetchArticleByTopic($id);
+                        if (isset($articles) && sizeof($articles) > 0){
+                            foreach ($articles as $article) { ?>
                             <div class="card">
-                                <a href="chapter.php?id=<?=$chapter->id?>">
+                                <a href="article.php?id=<?=$article->id?>">
                                     <div class="card-image">
                                         <img src="assets/orange.jpg" alt="Orange" />
                                     </div>
                                     <div class="card-body">
                                         <div class="card-title">
-                                            <h3><?=$chapter->name?></h3>
+                                            <h3><?=$article->name?></h3>
                                         </div>
                                         <div class="card-excerpt">
-                                            <p><?=$chapter->name?></p>
+                                            <p><?=$article->name?></p>
                                         </div>
                                     </div>
                                 </a>
