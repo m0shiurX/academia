@@ -7,15 +7,21 @@
     require_once "libs/account.php";
     $accounts = new Account($dbh);
 
-    if (isset($_POST['username']) && isset($_POST['password'])){
-        $user_name = htmlspecialchars( $_POST['username'], ENT_QUOTES, 'UTF-8' );
-	    $user_pwd = htmlspecialchars( $_POST['password'], ENT_QUOTES, 'UTF-8' );
-        if (!$accounts->loginAdmin($user_name, $user_pwd)){
+    if (isset($_POST['fullname']) && isset($_POST['username']) && isset($_POST['password'])){
+        $fullname = htmlspecialchars( $_POST['fullname'], ENT_QUOTES, 'UTF-8' );
+	    $username = htmlspecialchars( $_POST['username'], ENT_QUOTES, 'UTF-8' );
+	    $password = htmlspecialchars( $_POST['password'], ENT_QUOTES, 'UTF-8' );
+	    $contact = htmlspecialchars( $_POST['contact'], ENT_QUOTES, 'UTF-8' );
+	    $address = htmlspecialchars( $_POST['address'], ENT_QUOTES, 'UTF-8' );
+	    $role = htmlspecialchars( $_POST['role'], ENT_QUOTES, 'UTF-8' );
+        $gender = htmlspecialchars( $_POST['gender'], ENT_QUOTES, 'UTF-8' );
+        echo "$fullname";
+        if (!$accounts->addAccount($fullname, $username, $password, $contact, $address, $role, $gender)){
             session::set('error', 'Cannot connect you. Check your credentials.');
-            $commons->redirectTo(SITE_PATH.'login.php');
+            $commons->redirectTo(SITE_PATH.'register.php');
         }
-        session::set('user', $user_name);
-        $commons->redirectTo(SITE_PATH.'dashboard.php');
+        session::set('error', 'Account created ! Please login now !');        
+        $commons->redirectTo(SITE_PATH.'login.php');
     }
 ?>
 
@@ -36,28 +42,55 @@
             <img src="assets/logo.png" alt="CSE">
         </div>
 
-        <form action="login.php" method="POST">
+        <form action="register.php" method="POST">
             <div class="form-group">
-                <!-- <?php  if ( isset($_SESSION['error']) ): ?>
-                    <div class="warning">
-                        
+                <div class="warning">
+                <?php  if ( isset($_SESSION['error']) ): ?>
                         <?= $_SESSION['error'] ?>
+                <?php session::destroy('error'); endif ?>
                     </div>
-                <?php session::destroy('error'); endif ?> -->
+                <input type="text" name="fullname" placeholder="Full Name" required>
+                <input type="textarea" name="adress" placeholder="Address" required>
+                <input type="text" name="contact" placeholder="Contact" required>
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
-                <input type="text" name="name" placeholder="Name" required>
-                <select>
-                        <option value="volvo">Teacher</option>
-                        <option value="saab">Student</option>
-                </select>
-
-
+                <div class="radio">
+                    <ul>
+                        <li>
+                            <input type="radio" id="f-option" value="teacher" name="role" required>
+                            <label for="f-option">Teacher</label>
+                            <div class="check"></div>
+                        </li>
+                        
+                        <li>
+                            <input type="radio" id="s-option" value="student" name="role" required>
+                            <label for="s-option">Student</label>
+                            <div class="check"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="radio">
+                    <ul>
+                        <li>
+                            <input type="radio" id="m-option" value="male" name="gender" required>
+                            <label for="m-option">Male</label>
+                            <div class="check"></div>
+                        </li>
+                        
+                        <li>
+                            <input type="radio" id="fm-option" value="female" name="gender" required>
+                            <label for="fm-option">Female</label>
+                            <div class="check"></div>
+                        </li>
+                    </ul>
+                </div>
                 <button class="btn" type="submit">Sign Up</button>
+                <p>Already have an account ? <a href="login.php">Log in</a></p>
             </div>
         </form>
 
     </div>
+    <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -65,6 +65,7 @@
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <button class="btn" type="submit">Log In</button>
+                <p>Dont have an account ? <a href="register.php">Register</a></p>
             </div>
         </form>
 

@@ -3,13 +3,15 @@
         <div class="top-bar">
             <h1 class="title">Academia</h1>
             <span>
-                <?php echo $_SESSION['user']; ?>
+                <span><?php echo $_SESSION['user']; ?></span>
                 <span class="box"><img src="assets/prof.jpg" alt="" srcset=""></span>
             </span>
         </div>
-        <div class="floating-menu">
+        <div class="minimal-menu">
             <div class="logo">
-                <div class="box"></div>
+                <div class="box">
+                    <img src="assets/logo.png" alt="CSE">
+                </div>
             </div>
             <?php include("components/f-menu.php"); ?>
         </div>

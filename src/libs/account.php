@@ -18,7 +18,6 @@
 	        }else{
 	        	return false;
 	        }
-
 		}
 
 		public function exists( $user_name ){
@@ -32,11 +31,11 @@
 			return strcmp( $user_pwd1, $user_pwd2 ) == 0;
         }
         
-        public function addAccount($user_name, $user_pwd, $email, $full_name, $address, $contact){
-			$request = $this->dbh->prepare("INSERT INTO accounts (user_name, user_pwd, email, full_name, address, contact) VALUES(?,?,?,?,?,?) ");
-			return $request->execute([$user_name, session::hashPassword($user_pwd), $email, $full_name, $address, $contact]);
+        public function addAccount($fullname, $username, $password, $contact, $address, $role, $gender){
+			$request = $this->dbh->prepare("INSERT INTO accounts (fullname, username, password, contact, address, role, gender) VALUES(?,?,?,?,?,?,?)");
+			return $request->execute([$fullname, $username, session::hashPassword($password), $contact, $address, $role, $gender]);
 		}
-
+		
 		public function fetchAllAccounts($limit = 10){
 			$request = $this->dbh->prepare("SELECT * FROM accounts  ORDER BY id DESC  LIMIT $limit");
 			if ($request->execute()) {
