@@ -7,7 +7,7 @@
             <div class="logo">
                 <div class="box"></div>
             </div>
-            <?php include('components/tfloatingmenu.php'); ?>
+            <?php include('components/tf-menu.php'); ?>
         </div>
         <main>
             <div class="objects">

@@ -3,11 +3,11 @@
         <div class="top-bar">
             <h1 class="title">Academia | itGeeks </h1>
         </div>
-        <div class="floating-menu minimal-menu">
+        <div class="minimal-menu">
             <div class="logo">
                 <div class="box"></div>
             </div>
-            <?php include("components/floatingmenu.php"); ?>
+            <?php include("components/f-menu.php"); ?>
         </div>
         <div class="menu-bar">
             <?php include("components/menu.php"); ?>        

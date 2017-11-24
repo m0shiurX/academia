@@ -48,6 +48,12 @@
       display: block;
       margin: 10px auto;
       border: none; }
+    .login-container .form-group select {
+      height: 41px;
+      width: 218px;
+      display: block;
+      padding-left: 20px;
+      margin: 10px auto; }
     .login-container .form-group button {
       padding: 15px 60px;
       color: #FFF;
@@ -97,7 +103,7 @@
     z-index: 12;
     background: #1c1c1c;
     width: 200px;
-    height: 70%;
+    height: 70% !important;
     border-radius: 0 0 100px 100px;
     box-shadow: 1px 3px 10px 1px #444444; }
     .container .floating-menu .logo {
@@ -108,6 +114,7 @@
         width: 100px;
         background: #1A535C; }
     .container .floating-menu .f-menu {
+      display: block !important;
       list-style: none;
       margin-top: 50px; }
       .container .floating-menu .f-menu li {
@@ -127,8 +134,11 @@
   .container .minimal-menu {
     grid-area: header;
     display: block;
-    z-index: 4;
-    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    background: #1c1c1c;
     width: 200px;
     height: 180px;
     border-radius: 0 0 100px 100px;
@@ -146,11 +156,10 @@
     grid-area: menus;
     background: #1A535C;
     padding-top: 200px;
-    border-right: 1px solid #7b7b7b;
     background-color: #1A535C;
     z-index: 3;
-    height: 100vh;
-    margin-top: -25%; }
+    margin-top: -33%;
+    box-shadow: 4px 0 8px 0 rgba(0, 0, 0, 0.2); }
     .container .menu-bar .f-menu li {
       list-style: none;
       cursor: pointer; }

@@ -66,6 +66,13 @@ $image-height: 250px;
           margin: 10px auto;
           border: none;
       }
+      select {
+          height: 41px;
+          width: 218px;
+          display: block;
+          padding-left: 20px;
+          margin: 10px auto;
+      }
       button{
           padding: 15px 60px;
           color: #FFF;
@@ -131,7 +138,7 @@ $image-height: 250px;
     // styles
     background: $dark;
     width: 200px;
-    height: 70%;
+    height: 70% !important;
     border-radius: 0 0 100px 100px;
     box-shadow: 1px 3px 10px 1px #444444;
     .logo{
@@ -144,6 +151,7 @@ $image-height: 250px;
       }
     }
     .f-menu{
+      display: block !important;
       list-style: none;
       margin-top:50px;
       li {
@@ -169,9 +177,12 @@ $image-height: 250px;
   .minimal-menu{
     grid-area: header;
     display: block;
-    z-index: 4;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 12;
     // styles
-    background: $light;
+    background: $dark;
     width: 200px;
     height: 180px;
     border-radius: 0 0 100px 100px;
@@ -193,11 +204,10 @@ $image-height: 250px;
     grid-area: menus;
     background: $primary;
     padding-top: 200px;
-	  border-right: 1px solid $secondary;
     background-color: $primary;
     z-index: 3;
-    height:100vh;
-    margin-top:-25%;
+    margin-top:-33%;
+    box-shadow: 4px 0 8px 0 rgba(0, 0, 0, 0.2);
     .f-menu{
       li {
         list-style: none;

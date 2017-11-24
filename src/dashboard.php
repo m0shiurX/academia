@@ -11,7 +11,7 @@
             <div class="logo">
                 <div class="box"></div>
             </div>
-            <?php include("components/floatingmenu.php"); ?>
+            <?php include("components/f-menu.php"); ?>
         </div>
         <main>
             <div class="objects">

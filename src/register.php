@@ -1,4 +1,5 @@
 <?php
+
 	require_once 'components/headx.php';
 	if (isset($_SESSION['user']) ){
         $commons->redirectTo(SITE_PATH.'dashboard.php');
@@ -37,20 +38,26 @@
 
         <form action="login.php" method="POST">
             <div class="form-group">
-                <?php  if ( isset($_SESSION['error']) ): ?>
+                <!-- <?php  if ( isset($_SESSION['error']) ): ?>
                     <div class="warning">
                         
                         <?= $_SESSION['error'] ?>
                     </div>
-                <?php session::destroy('error'); endif ?>
+                <?php session::destroy('error'); endif ?> -->
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
-                <button class="btn" type="submit">Log In</button>
+                <input type="text" name="name" placeholder="Name" required>
+                <select>
+                        <option value="volvo">Teacher</option>
+                        <option value="saab">Student</option>
+                </select>
+
+
+                <button class="btn" type="submit">Sign Up</button>
             </div>
         </form>
 
     </div>
     <script src="js/main.js"></script>
-
 </body>
 </html>

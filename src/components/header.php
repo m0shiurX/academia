@@ -1,4 +1,9 @@
-<?php require_once 'config/headx.php'; ?>
+<?php
+    require_once 'components/headx.php';
+    if (!isset($_SESSION['user']) ){
+        $commons->redirectTo(SITE_PATH.'login.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
