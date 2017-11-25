@@ -1,7 +1,7 @@
 <?php include("components/header.php"); ?>
     <div class="container">
         <div class="top-bar">
-            <h1 class="title">Academia | itGeeks </h1>
+            <h1 class="title">Academia | Chapters </h1>
         </div>
         <div class="minimal-menu">
             <div class="logo">
@@ -34,7 +34,7 @@
                                             <h3><?=$chapter->name?></h3>
                                         </div>
                                         <div class="card-excerpt">
-                                            <p><?=$chapter->name?></p>
+                                            <p><?=$chapter->description?></p>
                                         </div>
                                     </div>
                                 </a>

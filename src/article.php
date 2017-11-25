@@ -1,7 +1,7 @@
 <?php include("components/header.php"); ?>
     <div class="container">
         <div class="top-bar">
-            <h1 class="title">Academia | itGeeks </h1>
+            <h1 class="title">Academia | Articles </h1>
         </div>
         <div class="minimal-menu">
             <div class="logo">
@@ -21,6 +21,7 @@
                     $articles = new Article($dbh);
                     if (isset($_GET['id'])) {
                         $id = $_GET['id'];
+                        // Article details to be loaded
                         $articles = $articles->fetchArticleByTopic($id);
                         if (isset($articles) && sizeof($articles) > 0){
                             foreach ($articles as $article) { ?>

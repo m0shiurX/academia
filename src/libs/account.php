@@ -37,7 +37,7 @@
 		}
 		
 		public function fetchAllAccounts($limit = 10){
-			$request = $this->dbh->prepare("SELECT * FROM accounts  ORDER BY id DESC  LIMIT $limit");
+			$request = $this->dbh->prepare("SELECT * FROM accounts where status = 1  ORDER BY id DESC  LIMIT $limit");
 			if ($request->execute()) {
 				return $request->fetchAll();
 			}

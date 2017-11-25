@@ -16,7 +16,7 @@
             session::set('error', 'Your account is not yet active or disabled.');
             $commons->redirectTo(SITE_PATH.'login.php');
         }else{
-
+            $id = $ac_details->id;
             $fullname = $ac_details->fullname;
             $gender = $ac_details->gender;
             $address = $ac_details->address;
@@ -26,6 +26,7 @@
             $semister_id = $ac_details->semister_id;
             $session_id = $ac_details->session_id;
 
+            session::set('id', $id);
             session::set('user', $username);
             session::set('fullname', $fullname);
             session::set('address', $address);

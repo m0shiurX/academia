@@ -1,7 +1,7 @@
 <?php include("components/header.php"); ?>
     <div class="container">
         <div class="top-bar">
-            <h1 class="title">Academia | itGeeks </h1>
+            <h1 class="title">Academia | Articles </h1>
         </div>
         <div class="minimal-menu">
             <div class="logo">

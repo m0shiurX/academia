@@ -19,7 +19,7 @@
 			return $request->execute([$name]);
 		}
 		
-		public function fetchSubjects($limit = 10){
+		public function fetchSubjects($limit = 100){
 			$request = $this->dbh->prepare("SELECT * FROM subjects  ORDER BY id  LIMIT $limit");
 			if ($request->execute()) {
 				return $request->fetchAll();

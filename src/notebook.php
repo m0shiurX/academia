@@ -1,7 +1,7 @@
 <?php include("components/header.php"); ?>
     <div class="container">
         <div class="top-bar">
-            <h1 class="title">Academia | Topics </h1>
+            <h1 class="title">Academia | Articles </h1>
         </div>
         <div class="minimal-menu">
             <div class="logo">
@@ -16,25 +16,25 @@
         </div>
         <main>
             <div class="objects">
-                <?php
-                    require_once "libs/topic.php";
-                    $topics = new Topic($dbh);
-                    if (isset($_GET['id'])) {
-                        $id = $_GET['id'];
-                        $topics = $topics->fetchTopicByChapter($id);
-                        if (isset($topics) && sizeof($topics) > 0){
-                            foreach ($topics as $topic) { ?>
+                <?php 
+                    require_once "libs/notebook.php";
+                    $notebook = new Notebook($dbh);
+                    if (isset($_SESSION['id'])) {
+                        $id = $_SESSION['id'];
+                        $notebook = $notebook->fetchNotebookById($id);
+                        if (isset($notebook) && sizeof($notebook) > 0){
+                            foreach ($notebook as $note) { ?>
                             <div class="card">
-                                <a href="topic.php?id=<?=$topic->id?>">
+                                <a href="article.php?id=<?=$note->id?>">
                                     <div class="card-image">
                                         <img src="assets/orange.jpg" alt="Orange" />
                                     </div>
                                     <div class="card-body">
                                         <div class="card-title">
-                                            <h3><?=$topic->name?></h3>
+                                            <h3><?=$note->notes?></h3>
                                         </div>
                                         <div class="card-excerpt">
-                                            <p><?=$topic->description?></p>
+                                            <p><?=$note->article_id?></p>
                                         </div>
                                     </div>
                                 </a>

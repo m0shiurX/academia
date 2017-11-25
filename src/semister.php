@@ -1,7 +1,7 @@
 <?php include("components/header.php"); ?>
     <div class="container">
         <div class="top-bar">
-            <h1 class="title">Academia | itGeeks </h1>
+            <h1 class="title">Academia | Subjects </h1>
         </div>
         <div class="minimal-menu">
             <div class="logo">
@@ -32,7 +32,7 @@
                         if (isset($subjects) && sizeof($subjects) > 0){
                             foreach ($subjects as $subject) { ?>
                             <div class="card">
-                                <a href="#">
+                                <a href="subject.php?id=<?=$subject->id?>">
                                     <div class="card-image">
                                         <img src="assets/orange.jpg" alt="Orange" />
                                     </div>
@@ -56,7 +56,7 @@
             <div class="top-sidebar">
                 <div class="title">Subjects and Contents :</div>
             </div>
-            <?php include("components/ranking.php"); ?>
+            <?php include("components/newsfeed.php"); ?>
         </div>
     </div>
 <?php include("components/footer.php");?>

@@ -6,7 +6,7 @@
             private $dbhost     = 'localhost';
             private $dbuser     = 'root';
             private $dbpassword = '';
-            private $dbname     = 'academia';
+            private $dbname     = 'acdemia_web';
 
         	public $dbh = null;
 

@@ -314,7 +314,7 @@ $image-height: 250px;
           box-sizing:border-box;
           border-bottom: 1px solid rgb(235,235,235);
           display: block;
-          text-indent: 20px;
+          padding-left: 1em;
           text-transform: capitalize;
           transition: all .5s ease-in;
           &.activated{
@@ -349,7 +349,7 @@ $image-height: 250px;
       width: 220px;
       background-color:white;
       box-shadow: 0px 5px 10px rgba(85, 85, 85, 0.5);
-      margin: 2px 1px;
+      margin: 6px 1px;
       a {
       color: #333;
       text-decoration:none;
@@ -528,9 +528,23 @@ $image-height: 250px;
   }
 }
 
+::-webkit-scrollbar{
+    height:10px;
+    width:5px;
+    border-radius: 2px;
+    background: transparent;
+        transition: all 0.3s ease;
+}
+::-webkit-scrollbar:hover{
+    background: #c6c7ca;
+    width:15px;    
+}
+::-webkit-scrollbar-thumb{
+    background:#777779;
+    border-radius: 5px;
+}
 
-
-@media screen and (max-width:980px) {
+@media screen and (max-width:700px) {
   .side-bar{
     grid-area: side-bar;
     display: none;

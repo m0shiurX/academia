@@ -17,6 +17,7 @@
         </div>
         <main>
             <div class="objects">
+                <p><?php echo $_SESSION['id']; ?></p>
                 <p><?php echo $_SESSION['user']; ?></p>
                 <p><?php echo $_SESSION['role']; ?></p>
                 <p><?php echo $_SESSION['fullname']; ?></p>
