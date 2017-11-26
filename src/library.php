@@ -51,9 +51,9 @@
         </main>
         <div class="side-bar">
             <div class="top-sidebar">
-                <div class="title">Subjects and Contents :</div>
+                <div class="title">Newsfeed</div>
             </div>
-            <?php include("components/ranking.php"); ?>
+            <?php include("components/newsfeed.php"); ?>
         </div>
     </div>
 <?php include("components/footer.php");?>

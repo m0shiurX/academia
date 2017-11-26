@@ -7,7 +7,7 @@
                 <span class="box"><img src="assets/prof.jpg" alt="" srcset=""></span>
             </span>
         </div>
-        <div class="floating-menu">
+        <div class="minimal-menu">
             <div class="logo">
                 <div class="box">
                     <img src="assets/logo.png" alt="CSE">
@@ -16,38 +16,52 @@
             <?php include("components/f-menu.php"); ?>
         </div>
         <main>
-                <p><?php //echo $_SESSION['user']; ?></p>
-                <p><?php //echo $_SESSION['role']; ?></p>
-                <p><?php //echo $_SESSION['fullname']; ?></p>
-                <p><?php //echo $_SESSION['address']; ?></p>
-                <p><?php //echo $_SESSION['contact']; ?></p>
-                <p><?php //echo $_SESSION['session_id']; ?></p>
-                <p><?php //echo $_SESSION['semister_id']; ?></p>
             <div class="objects">
+
                 <?php 
-                        require_once "libs/account.php";
-                        $accounts = new Account($dbh);
-                        $accounts = $accounts->fetchAllStudents();
-                        if (isset($accounts) && sizeof($accounts) > 0){ 
-                            foreach ($accounts as $account) { ?>
-                            <div class="card">
-                                <a href="profile.php?id=<?=$account->fullname?>">
-                                    <div class="card-image">
-                                        <img src="assets/orange.jpg" alt="Orange" />
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="card-title">
-                                            <h3><?=$account->fullname?></h3>
-                                        </div>
-                                        <div class="card-excerpt">
-                                            <p><?=$account->fullname?></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        <?php }
-                        }
+                        // require_once "libs/account.php";
+                        // $accounts = new Account($dbh);
+                        // $accounts = $accounts->fetchAllStudents();
+                        // if (isset($accounts) && sizeof($accounts) > 0){ 
+                        //     foreach ($accounts as $account) { ?>
+                         <?php //}
+                        // }
                 ?>
+            </div>
+            <div class="flextable">
+                <div class="trow thead">
+                    <div class="tcolumn">
+                        Semister Name
+                    </div>
+                    <div class="tcolumn">
+                        Total Students
+                    </div>
+                    <div class="tcolumn">
+                        View Students
+                    </div>
+                </div>
+                <div class="trow">
+                    <div class="tcolumn" data-header="semister">
+                            1st Semister
+                    </div>
+                    <div class="tcolumn" data-header="students">
+                            38 Students
+                    </div>
+                    <div class="tcolumn button" data-header="">
+                            <a href="#" class="btn">VIEW</a>
+                    </div>
+                </div>
+                <div class="trow">
+                    <div class="tcolumn" data-header="semister">
+                            1st Semister
+                    </div>
+                    <div class="tcolumn" data-header="students">
+                            38 Students
+                    </div>
+                    <div class="tcolumn button">
+                            <a href="#" class="btn">VIEW</a>
+                    </div>
+                </div>
             </div>
         </main>
         <div class="side-bar">

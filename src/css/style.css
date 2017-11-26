@@ -240,7 +240,7 @@ body {
   .container .menu-bar {
     grid-area: menus;
     background: #1A535C;
-    padding-top: 300px;
+    padding-top: 115px;
     background-color: #1A535C;
     z-index: 3;
     box-shadow: 4px 0 8px 0 rgba(0, 0, 0, 0.2); }
@@ -526,6 +526,78 @@ body {
         font-weight: bold; }
       .container main .card .card-excerpt {
         color: #777; }
+  .container .flextable {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    border: 0px solid #fff;
+    line-height: 1.5;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2); }
+    .container .flextable .thead {
+      display: none; }
+      @media (min-width: 500px) {
+        .container .flextable .thead {
+          color: #fff;
+          font-weight: bold;
+          background-color: #1A535C !important; } }
+    .container .flextable .trow {
+      width: 100%; }
+      .container .flextable .trow:nth-of-type(even) {
+        background-color: #3299BB;
+        color: #fff; }
+      .container .flextable .trow:nth-of-type(odd) {
+        background-color: #fff;
+        color: #1c1c1c; }
+      @media (min-width: 500px) {
+        .container .flextable .trow {
+          display: flex;
+          flex-flow: row nowrap;
+          transition: all .5s ease-in-out; }
+          .container .flextable .trow:nth-of-type(even) {
+            background-color: #fff;
+            color: #1c1c1c; }
+          .container .flextable .trow:nth-of-type(odd) {
+            background-color: #3299BB;
+            color: #fff; }
+          .container .flextable .trow:hover {
+            transform: scale(1.02, 1.02);
+            cursor: pointer;
+            color: #fff;
+            background-color: #1c1c1c; } }
+      .container .flextable .trow .tcolumn {
+        display: flex;
+        flex-flow: row nowrap;
+        flex-grow: 1;
+        flex-basis: 0;
+        padding: 0.5em;
+        word-break: break-word;
+        align-items: baseline;
+        text-align: center; }
+        .container .flextable .trow .tcolumn:before {
+          content: attr(data-header);
+          width: 30%;
+          font-weight: bold; }
+        @media (min-width: 500px) {
+          .container .flextable .trow .tcolumn {
+            border: 1px solid #fff;
+            padding: 0.5em; }
+            .container .flextable .trow .tcolumn:before {
+              content: none; } }
+        .container .flextable .trow .tcolumn .btn {
+          text-align: center;
+          text-decoration: none;
+          background: #1c1c1c;
+          color: white;
+          padding: .5em;
+          width: 60%; }
+          @media (min-width: 500px) {
+            .container .flextable .trow .tcolumn .btn {
+              width: 100%; } }
+          .container .flextable .trow .tcolumn .btn:hover {
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2); }
+        @media (min-width: 500px) {
+          .container .flextable .trow .tcolumn.button {
+            padding: 0 !important; } }
   .container .side-bar {
     grid-area: side-bar;
     z-index: 1;
