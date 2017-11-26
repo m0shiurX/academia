@@ -16,13 +16,6 @@
         </div>
         <main>
             <div class="objects">
-                <div class="card">
-                    <a href="#">
-                        <div class="card-placeholder">
-                            <img src="assets/plus.png" alt="Orange" />
-                        </div>
-                    </a>
-                </div>
                 <?php 
                     require_once "libs/subject.php";
                     $subject = new Subject($dbh);
@@ -53,8 +46,11 @@
             </div>
         </main>
         <div class="side-bar">
+            <div class="buttons">
+                <a href="login.php" class="btn">Add Subjects</a>
+            </div>
             <div class="top-sidebar">
-                <div class="title">Subjects and Contents :</div>
+                <div class="title">Newsfeed :</div>
             </div>
             <?php include("components/newsfeed.php"); ?>
         </div>

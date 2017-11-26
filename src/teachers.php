@@ -27,7 +27,7 @@
                 <?php 
                         require_once "libs/account.php";
                         $accounts = new Account($dbh);
-                        $accounts = $accounts->fetchAllAccounts();
+                        $accounts = $accounts->fetchAllTeachers();
                         if (isset($accounts) && sizeof($accounts) > 0){ 
                             foreach ($accounts as $account) { ?>
                             <div class="card">

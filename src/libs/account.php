@@ -43,6 +43,20 @@
 			}
 			return false;
 		}
+		public function fetchAllStudents($limit = 10){
+			$request = $this->dbh->prepare("SELECT * FROM accounts where status = 1 AND role='student'  ORDER BY id DESC  LIMIT $limit");
+			if ($request->execute()) {
+				return $request->fetchAll();
+			}
+			return false;
+		}
+		public function fetchAllTeachers($limit = 10){
+			$request = $this->dbh->prepare("SELECT * FROM accounts where status = 1 AND role='teacher'  ORDER BY id DESC  LIMIT $limit");
+			if ($request->execute()) {
+				return $request->fetchAll();
+			}
+			return false;
+		}
 		
 		public function fetchAccountDetails($username){
 			$request = $this->dbh->prepare("SELECT * FROM accounts  where username = ? AND status = 1 LIMIT 1");

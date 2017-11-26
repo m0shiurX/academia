@@ -1,7 +1,7 @@
 <?php include("components/header.php"); ?>
     <div class="container">
         <div class="top-bar">
-            <h1 class="title">Academia | Friends</h1>
+            <h1 class="title">Academia | Students</h1>
             <span>
                 <span><?php echo $_SESSION['user']; ?></span>
                 <span class="box"><img src="assets/prof.jpg" alt="" srcset=""></span>
@@ -27,7 +27,7 @@
                 <?php 
                         require_once "libs/account.php";
                         $accounts = new Account($dbh);
-                        $accounts = $accounts->fetchAllAccounts();
+                        $accounts = $accounts->fetchAllStudents();
                         if (isset($accounts) && sizeof($accounts) > 0){ 
                             foreach ($accounts as $account) { ?>
                             <div class="card">

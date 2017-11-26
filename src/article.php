@@ -14,6 +14,7 @@
         <div class="menu-bar">
         <?php include("components/menu.php"); ?>
         </div>
+        <div class="lay"></div>
         <main>
             <div class="objects">
                 <?php 
@@ -25,8 +26,7 @@
                         $articles = $articles->fetchArticleByTopic($id);
                         if (isset($articles) && sizeof($articles) > 0){
                             foreach ($articles as $article) { ?>
-                            <div class="card">
-                                <a href="article.php?id=<?=$article->id?>">
+                            <div class="postcard">
                                     <div class="card-image">
                                         <img src="assets/orange.jpg" alt="Orange" />
                                     </div>
@@ -38,7 +38,6 @@
                                             <p><?=$article->data?></p>
                                         </div>
                                     </div>
-                                </a>
                             </div>
                         <?php }
                         }
@@ -47,6 +46,9 @@
             </div>
         </main>
         <div class="side-bar">
+            <div class="buttons">
+                <a href="login.php" class="btn">Add Article</a>
+            </div>
             <div class="top-sidebar">
                 <div class="title">Subjects and Contents :</div>
             </div>

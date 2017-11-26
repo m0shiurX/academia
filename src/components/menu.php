@@ -9,7 +9,6 @@
                 foreach ($subjects as $subject) { ?>
                 <li><a href="subject.php?id=<?=$subject->id?>"><?=$subject->name?></a></li>
         <?php }} ?>
-            <li><a class="activated" href="#">Add New <span></span></a></li>
         </ul>
         
     <?php
@@ -23,6 +22,5 @@
                 foreach ($semisters as $semister) { ?>
                 <li><a href="semister.php?id=<?=$semister->id?>"><?=$semister->name?></a></li>
         <?php }} ?>
-                <li><a class="activated" href="#">Add New <span></span></a></li>
         </ul>
 <?php }
