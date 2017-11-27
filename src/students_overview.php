@@ -1,10 +1,12 @@
 <?php include("components/header.php"); ?>
 <?php
-    if (isset($_POST['semister']) && isset($_POST['current_semister'])) {
+    if (isset($_POST['current_semister'])) {
+
         require_once "libs/account.php";        
         $semisterUpdate = new Account($dbh);
         $currentSemister = $_POST['current_semister'];
-        if ($semisterUpdate->updateStudentSemister($_POST['semister'], $currentSemister)) {
+        $nextSemister = $_POST['semister'];
+        if ($semisterUpdate->updateStudentSemister($nextSemister, $currentSemister)) {
             return true;
         }else{
             return false;
@@ -35,7 +37,9 @@
                     $id = $_GET['id'];
                     require_once "libs/semister.php";
                     $semister = new Semister($dbh);
-                    $details = $semister->fetchSemisterByID($id);?>
+                    $details = $semister->fetchSemisterByID($id);
+                    $current = $details->id;
+                    ?>
                 <div class="informations">
                     <ul>
                         <li><h2><?=$details->name?></h2></li>
@@ -47,12 +51,24 @@
                 <div class="actions">
                     <form id="insert_form" action="update.php" method="POST">
                         <input type="hidden" name="current_semister" value="<?=$details->name?>">
-                        <select name="semister" id="semister">
-                            <option value="2">2nd Semister</option>
-                            <option value="3">3rd Semister</option>
-                            <option value="4">4th Semister</option>
+                        <input type="hidden" name="next_semister" value="<?=$details->id+1?>">
+                        <select type="hidden" name="semister" id="semister">
+                                <?php 
+                                        $semisters = $semister->fetchSemisters();
+                                        if (isset($semisters) && sizeof($semisters) > 0){
+                                            foreach ($semisters as $semister) {
+                                                $new = $semister->id;
+                                                if ($current >= $new || $current+1 < $new){ ?>
+                                                    <option value="" disabled><?=$semister->name?></option>
+                                            <?php }else{?>
+                                                    <option value="<?=$new?>"><?=$semister->name?></option>
+                                            <?php }
+                                         ?> 
+                                    <?php }
+                                        }
+                                ?>
                         </select>
-                        <button class="btn" type="submit" id="promotion">Promote All</button>
+                        <button class="btn" type="submit" id="promotion">Promote ALL</button>
                     </form>
                     <!-- <button class="btn">Individually</button> -->
                 </div>
