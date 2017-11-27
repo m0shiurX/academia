@@ -4,10 +4,29 @@ $(document).ready(()=>{
         $(".minimal-menu").toggleClass("floating-menu");
         // $(".menu-bar").slideToggle();
     });
+    $('#insert_form').on('submit', function (event) {
+        event.preventDefault();
+        $.ajax({
+            url: "students_overview.php",
+            method: "POST",
+            data: $('#insert_form').serialize(),
+            success: function (response) {
+                $('#insert_form')[0].reset();
+                $('.actions').html(`
+                    <h3>Succeded !</h3> 
+                    <a class="btn" href="students.php">Back</a>
+                `);
+            }
+        });
+    });
 });
 
 
-var data = {
+
+
+
+// Chart JS 
+var datatable = {
     labels: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
     datasets: [
         {
@@ -35,7 +54,7 @@ var options = {
     scaleStepWidth: 100,
     responsive: true,
     showTooltips: true,
-    tooltipTemplate: "<%= value %> " + "Students",
+    tooltipTemplate: "<%= value %> ",
     tooltipFontSize: 16,
     tooltipYPadding: 12,
     tooltipXPadding: 12,
@@ -54,5 +73,4 @@ var options = {
     },
     tooltipEvents: []
 }
-
-new Chart(c1.getContext("2d")).Line(data, options);
+new Chart(stat.getContext("2d")).Line(datatable, options);

@@ -272,6 +272,33 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
     min-height: 90vh; }
+    .container main .actionbar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 1em 0em; }
+      .container main .actionbar .informations ul {
+        list-style: none;
+        text-align: right; }
+        .container main .actionbar .informations ul li {
+          line-height: 1.5em; }
+      .container main .actionbar .actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; }
+        .container main .actionbar .actions select {
+          padding: .5em 1em; }
+        .container main .actionbar .actions .btn {
+          text-align: center;
+          background: #1A535C;
+          color: white;
+          padding: .5em 1em;
+          border: none;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2);
+          text-decoration: none; }
+          .container main .actionbar .actions .btn:hover {
+            cursor: pointer; }
     .container main .objects {
       display: flex;
       flex-wrap: wrap;
@@ -571,8 +598,9 @@ body {
         flex-basis: 0;
         padding: 0.5em;
         word-break: break-word;
-        align-items: baseline;
-        text-align: center; }
+        align-items: center;
+        text-align: center;
+        line-height: 1em; }
         .container .flextable .trow .tcolumn:before {
           content: attr(data-header);
           width: 30%;
@@ -742,19 +770,31 @@ body {
         font-weight: 600;
         font-size: 1.2em;
         padding-left: 3.5em; }
-    .container .minimal-menu {
+    .container .actionbar {
+      flex-direction: column; }
+    .container .floating-menu {
+      grid-area: header;
       display: block;
-      position: fixed;
+      position: absolute;
       top: 0;
-      left: 0px;
+      left: 0;
       z-index: 12;
       background: #1c1c1c;
-      width: 80px;
-      height: 80px !important;
-      border-radius: 0 0 100px 100px; }
-      .container .minimal-menu .logo .box {
-        width: 100%; }
-      .container .minimal-menu .f-menu {
+      width: 180px;
+      height: 150px !important;
+      border-radius: 0 0 100px 100px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2);
+      border: 5px solid #383838;
+      border-top: 0; }
+      .container .floating-menu .logo .box {
+        margin: auto;
+        height: 100px;
+        width: 100px; }
+        .container .floating-menu .logo .box img {
+          width: 100%;
+          height: auto; }
+      .container .floating-menu .f-menu {
+        display: none;
         visibility: hidden; }
     .container .side-bar {
       visibility: hidden; }

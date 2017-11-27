@@ -16,18 +16,6 @@
             <?php include("components/f-menu.php"); ?>
         </div>
         <main>
-            <div class="objects">
-
-                <?php 
-                        // require_once "libs/account.php";
-                        // $accounts = new Account($dbh);
-                        // $accounts = $accounts->fetchAllStudents();
-                        // if (isset($accounts) && sizeof($accounts) > 0){ 
-                        //     foreach ($accounts as $account) { ?>
-                         <?php //}
-                        // }
-                ?>
-            </div>
             <div class="flextable">
                 <div class="trow thead">
                     <div class="tcolumn">
@@ -40,28 +28,29 @@
                         View Students
                     </div>
                 </div>
-                <div class="trow">
-                    <div class="tcolumn" data-header="semister">
-                            1st Semister
-                    </div>
-                    <div class="tcolumn" data-header="students">
-                            38 Students
-                    </div>
-                    <div class="tcolumn button" data-header="">
-                            <a href="#" class="btn">VIEW</a>
-                    </div>
-                </div>
-                <div class="trow">
-                    <div class="tcolumn" data-header="semister">
-                            1st Semister
-                    </div>
-                    <div class="tcolumn" data-header="students">
-                            38 Students
-                    </div>
-                    <div class="tcolumn button">
-                            <a href="#" class="btn">VIEW</a>
-                    </div>
-                </div>
+                <?php            
+                        require_once "libs/semister.php";
+                        $semister = new Semister($dbh);
+                        require_once "libs/account.php";
+                        $students = new Account($dbh);
+                        $semisters = $semister->fetchSemisters();
+                        if (isset($semisters) && sizeof($semisters) > 0){ 
+                            foreach ($semisters as $semister) {
+                            $quantity = $students->fetcStudentsbySemister($semister->id);?>
+                            <div class="trow">
+                                <div class="tcolumn" data-header="semister">
+                                <?=$semister->name?>
+                                </div>
+                                <div class="tcolumn" data-header="students">
+                                        <?=$quantity->studentsNumber?> Students
+                                </div>
+                                <div class="tcolumn button" data-header="">
+                                        <a href="students_overview.php?id=<?=$semister->id?>" class="btn">VIEW</a>
+                                </div>
+                            </div>
+                       <?php }
+                        }
+                ?>
             </div>
         </main>
         <div class="side-bar">

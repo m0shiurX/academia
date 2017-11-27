@@ -49,7 +49,7 @@
                         </div>
                         </div>
                         <div class='canvas-container'>
-                        <canvas id='c1'></canvas>
+                        <canvas id='stat'></canvas>
                         </div>
                     </div>
                     <div class='info'>
