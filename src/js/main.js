@@ -4,6 +4,22 @@ $(document).ready(()=>{
         $(".minimal-menu").toggleClass("floating-menu");
         // $(".menu-bar").slideToggle();
     });
+
+    $(".activator").click(function(){
+        let dataID = $(this).attr('data-id');
+        let msg = $(this).parent();
+        let row = $(this).closest('.trow');
+        $.ajax({
+            url: "activationpanel.php",
+            method: "POST",
+            data: "id=" + dataID,
+            success: function () {
+                $(msg).text('Approved !');
+                $(row).fadeOut();
+            }
+        });
+    });
+
     $('#insert_form').on('submit', function (event) {
         event.preventDefault();
         $.ajax({
@@ -20,10 +36,6 @@ $(document).ready(()=>{
         });
     });
 });
-
-
-
-
 
 // Chart JS 
 var datatable = {

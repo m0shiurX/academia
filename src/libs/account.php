@@ -64,6 +64,13 @@
 			}
 			return false;
 		}
+		public function fetcDeactivatedStudents(){
+			$request = $this->dbh->prepare("SELECT id, fullname, address, contact, gender  FROM accounts WHERE role = 'student' and status = 0");
+			if ($request->execute()) {
+				return $request->fetchAll();
+			}
+			return false;
+		}
 		public function fetchAllTeachers($limit = 10){
 			$request = $this->dbh->prepare("SELECT * FROM accounts where status = 1 AND role='teacher'  ORDER BY id DESC  LIMIT $limit");
 			if ($request->execute()) {
@@ -84,9 +91,14 @@
 			$request = $this->dbh->prepare("UPDATE accounts SET username =?, email =?, fullname =?, address= ?, contact =? WHERE user_id =?");
 			return $request->execute([$user_name, $email, $full_name, $address, $contact, $id]);
 		}
+
 		public function updateStudentSemister($new_semister, $present_semister){
 			$request = $this->dbh->prepare("UPDATE accounts SET semister_id = ? WHERE semister_id = ? AND status = 1 AND role = 'student'");
 			return $request->execute([$new_semister, $present_semister]);
+		}
+		public function activateStudent($id){
+			$request = $this->dbh->prepare("UPDATE accounts SET status = 1, semister_id = 1 WHERE id = ? AND role = 'student'");
+			return $request->execute([$id]);
 		}
 
 		public function deleteAdmin($id){
