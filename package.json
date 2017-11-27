@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "bourbon": "^4.3.4",
-    "breakpoint-sass": "^2.7.1"
+    "breakpoint-sass": "^2.7.1",
+    "trumbowyg": "^2.8.1"
   }
 }

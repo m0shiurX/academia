@@ -13,15 +13,16 @@ body {
   margin: 0 auto;
   width: 100%; }
   .login-container .logo {
+    display: flex;
     width: 250px;
     margin: auto;
     height: 220px;
     background: #fff;
     border-radius: 0 0 230px 230px; }
     .login-container .logo img {
-      margin-top: 5px;
-      width: 100%;
-      height: auto; }
+      margin: 0 auto;
+      width: 180px;
+      height: 170px; }
   .login-container h1 {
     text-align: center;
     font-size: 2em;
@@ -140,7 +141,9 @@ body {
   display: grid;
   grid-template-columns: 180px 3fr 1fr;
   grid-template-rows: 10% auto auto;
-  grid-template-areas: "header header header" "menus main side-bar" "menus main sidebar";
+  grid-template-areas: "header header header"
+ "menus main side-bar"
+ "menus main sidebar";
   align-items: stretch;
   font-family: Raleway;
   background-color: #f3f3f3;
@@ -749,7 +752,8 @@ body {
     display: grid;
     grid-template-columns: 180px 1fr;
     grid-template-rows: 80px auto;
-    grid-template-areas: "header header" "menus main";
+    grid-template-areas: "header header"
+ "menus main";
     align-items: stretch; }
   .side-bar {
     grid-area: side-bar;
@@ -760,7 +764,8 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 80px auto;
-    grid-template-areas: "header" "main";
+    grid-template-areas: "header"
+ "main";
     align-items: stretch; }
     .container .top-bar {
       justify-content: space-around;

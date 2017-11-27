@@ -46,6 +46,9 @@
             </div>
         </main>
         <div class="side-bar">
+            <div class="buttons">
+                <a href="addarticle.php" class="btn">Add Article</a>
+            </div>
             <div class="top-sidebar">
                 <div class="title">Subjects and Contents :</div>
             </div>

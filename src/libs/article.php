@@ -14,15 +14,22 @@
 			return sizeof($semisterData) != 0;
 		}
         
-        public function addArticle($name){
-			$request = $this->dbh->prepare("INSERT INTO articles (chapter_id, name) VALUES(?, ?)");
-			return $request->execute([$chapter_id, $name]);
+        public function addArticle($name,$data){
+			$request = $this->dbh->prepare("INSERT INTO articles (name, data) VALUES(?, ?)");
+			return $request->execute([$name, $data]);
 		}
 		
 		public function fetchArticle($limit = 10){
 			$request = $this->dbh->prepare("SELECT * FROM articles  ORDER BY id  LIMIT $limit");
 			if ($request->execute()) {
 				return $request->fetchAll();
+			}
+			return false;
+		}
+		public function fetchArticleByID($id){
+			$request = $this->dbh->prepare("SELECT * FROM articles WHERE  id = ?");
+			if ($request->execute([$id])) {
+				return $request->fetch();
 			}
 			return false;
 		}

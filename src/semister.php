@@ -47,7 +47,7 @@
         </main>
         <div class="side-bar">
             <div class="buttons">
-                <a href="login.php" class="btn">Add Subjects</a>
+                <a onclick="addSubject()" href="#" class="btn">Add Subjects</a>
             </div>
             <div class="top-sidebar">
                 <div class="title">Newsfeed :</div>

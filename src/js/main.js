@@ -86,3 +86,11 @@ var options = {
     tooltipEvents: []
 }
 new Chart(stat.getContext("2d")).Line(datatable, options);
+
+
+function addSubject() {
+    let left = (screen.width / 2) - (600 / 2);
+    let top = (screen.height / 2) - (800 / 2);
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
+    open('addsubject.php', 'Packages', params);
+}

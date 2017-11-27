@@ -23,9 +23,8 @@
                     if (isset($_GET['id'])) {
                         $id = $_GET['id'];
                         // Article details to be loaded
-                        $articles = $articles->fetchArticleByTopic($id);
-                        if (isset($articles) && sizeof($articles) > 0){
-                            foreach ($articles as $article) { ?>
+                        $article = $articles->fetchArticleByID($id);
+                        if (isset($article) && sizeof($article) > 0){?>
                             <div class="postcard">
                                     <div class="card-image">
                                         <img src="assets/orange.jpg" alt="Orange" />
@@ -39,7 +38,7 @@
                                         </div>
                                     </div>
                             </div>
-                        <?php }
+                        <?php
                         }
                     }
                 ?>
@@ -47,12 +46,12 @@
         </main>
         <div class="side-bar">
             <div class="buttons">
-                <a href="login.php" class="btn">Add Article</a>
+                <a href="add2notes.php" class="btn">Add to Notes</a>
             </div>
             <div class="top-sidebar">
-                <div class="title">Subjects and Contents :</div>
+                <div class="title">Newsfeed :</div>
             </div>
-            <?php include("components/ranking.php"); ?>
+            <?php include("components/newsfeed.php"); ?>
         </div>
     </div>
 <?php include("components/footer.php");?>
