@@ -1,10 +1,11 @@
 $(document).ready(()=>{
+    // menu toggle
     $(".logo").click(()=> {
-        console.log('clicked');
         $(".minimal-menu").toggleClass("floating-menu");
         // $(".menu-bar").slideToggle();
     });
 
+    // Activation panel
     $(".activator").click(function(){
         let dataID = $(this).attr('data-id');
         let msg = $(this).parent();
@@ -20,6 +21,7 @@ $(document).ready(()=>{
         });
     });
 
+    // Student promotion form
     $('#insert_form').on('submit', function (event) {
         event.preventDefault();
         $.ajax({
@@ -36,6 +38,9 @@ $(document).ready(()=>{
         });
     });
 });
+
+
+
 
 // Chart JS 
 var datatable = {
@@ -87,6 +92,12 @@ var options = {
 }
 new Chart(stat.getContext("2d")).Line(datatable, options);
 
+
+
+
+
+
+// Pop up functions for page retreivals
 function addSemister() {
     let left = (screen.width / 2) - (600 / 2);
     let top = (screen.height / 2) - (800 / 2);
@@ -106,6 +117,13 @@ function addChapter(id) {
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
     open('addchapter.php?id='+id, 'Packages', params);
 }
+function addTopic(subject, chapter) {
+    let left = (screen.width / 2) - (600 / 2);
+    let top = (screen.height / 2) - (800 / 2);
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
+    open('addtopic.php?subject='+subject+'&chapter='+chapter, 'Packages', params);
+}
+
 function addArticle() {
     let left = (screen.width / 2) - (600 / 2);
     let top = (screen.height / 2) - (800 / 2);
@@ -119,6 +137,27 @@ function addObject() {
     open('addobject.php', 'Packages', params);
 }
 
+// Go backward
 function goBack() {
     window.history.back();
+}
+
+
+// load articles by topic
+
+function loadArticles(topic_id) {
+    if (topic_id != null) {
+        $.ajax({
+            url: "loadarticles.php",
+            method: "POST",
+            data: "topic_id=" + topic_id,
+            success: function (response) {
+                $('.objects').html(response);
+
+            }
+        });
+    }
+    else {
+        $('.objects').html("<h2> Sorry ! No Contents found ! </h2>");
+    }
 }

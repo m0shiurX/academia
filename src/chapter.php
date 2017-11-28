@@ -7,6 +7,8 @@
                     $chapter = new Chapter($dbh);
                     $chapter = $chapter->fetchChapterById($_GET['id']);
                     $chapter_name = $chapter->name;
+                    $chapter_id = $chapter->id;
+                    $subject_id = $chapter->subject_id;
             }?>
             <h1 class="title"><?=isset($chapter_name) ? $chapter_name : 'Academia | Topics'?></h1>
         </div>
@@ -55,15 +57,17 @@
         <div class="side-bar">
             <div class="buttons">
                 <a href="#"  onclick="goBack()" class="btn">Back</a>
-                <a href="addarticle.php" class="btn">Add Article</a>
+                <a href="#" class="btn">Add Article</a>
+            </div>
+            <div class="buttons">
+                <a href="questions.php" class="btn">Questions</a>
             </div>
             <div class="top-sidebar">
-                <div class="title">Topics: </div>
-                <a href="addtopic.php" class="btn">Add New</a>
-                <a href="addtopic.php" class="btn">Questions</a>
+                <div class="title">Topics </div>
+                <a href="" onclick="addTopic(<?=isset($subject_id) ? $subject_id : ''?>,<?=isset($chapter_id) ? $chapter_id : ''?>)" class="btn">Add </a>
             </div>
-            <div class="newsfeed">
-                <ul class="news">
+            <div class="topics">
+                <ul class="topic_list">
                 <?php
                     require_once "libs/topic.php";
                     $topics = new Topic($dbh);
@@ -72,7 +76,7 @@
                         $topics = $topics->fetchTopicByChapter($id);
                         if (isset($topics) && sizeof($topics) > 0){
                             foreach ($topics as $topic) { ?>
-                             <li><?=$topic->name?></li>
+                             <li><a href="#" onclick="loadArticles(<?=$topic->id?>)"> <?=$topic->name?></a></li>
 
                         <?php }
                         }

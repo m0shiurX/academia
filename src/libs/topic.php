@@ -14,9 +14,9 @@
 			return sizeof($semisterData) != 0;
 		}
         
-        public function addTopic($name){
-			$request = $this->dbh->prepare("INSERT INTO topics (chapter_id, name) VALUES(?, ?)");
-			return $request->execute([$chapter_id, $name]);
+		public function addTopic($subject_id, $chapter_id, $name, $description){
+			$request = $this->dbh->prepare("INSERT INTO topics (subject_id, chapter_id, name, description) VALUES(?, ?, ?, ?)");
+			return $request->execute([$subject_id, $chapter_id, $name, $description]);
 		}
 		
 		public function fetchTopic($limit = 10){

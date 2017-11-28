@@ -27,7 +27,7 @@
 			return false;
 		}
 		public function fetchChapterById($id){
-			$request = $this->dbh->prepare("SELECT name FROM chapters  WHERE id = ? LIMIT 1");
+			$request = $this->dbh->prepare("SELECT id, name, subject_id FROM chapters  WHERE id = ? LIMIT 1");
 			if ($request->execute([$id])) {
 				return $request->fetch();
 			}
