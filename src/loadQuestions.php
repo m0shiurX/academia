@@ -14,16 +14,22 @@
                             <?php 
                                 require_once "libs/answer.php";
                                 $answers = new Answer($dbh);
-                                $answer = $answers->fetchAnswer($q->id);
-                               echo  $answer->answer;
+                                if (!$answer = $answers->fetchAnswer($q->id)) {
+                                    ?><i>No answer availale ! </i> <a href="#" onclick="answerNow()" class="btn"> Answer Now </a> <?php
+                                }else{
+                                    $ans =  $answer->answer;
+                                    echo $ans;
+
+                                }
                     ?> </li>
                 <?php }
                     ?>
                 </ul>
             </div>
             <?php   
+        }else{
+            echo "<div class='questions'>Nothing found !</div>";
         }
-        echo "<div class='questions'>Nothing found !</div>";
     }else{
         echo "Nothing found !";
     }

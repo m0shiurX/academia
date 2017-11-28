@@ -151,6 +151,12 @@ function addObject() {
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
     open('addobject.php', 'Packages', params);
 }
+function askQuestion() {
+    let left = (screen.width / 2) - (600 / 2);
+    let top = (screen.height / 2) - (800 / 2);
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
+    open('askquestion.php', 'Packages', params);
+}
 // Adding to notes
 function add2Note(article, account) {
     if (article != null) {

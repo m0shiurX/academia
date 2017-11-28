@@ -54,7 +54,7 @@
         <div class="side-bar">
             <div class="buttons">
                 <a href="#"  onclick="goBack()" class="btn">Back</a>
-                <a href="#" class="btn">Add Article</a>
+                <a href="#"onclick="addArticle()" class="btn">Add Article</a>
             </div>
             <div class="buttons">
                 <a href="#"  onclick="loadQuestions(<?=$id?>)" class="btn">Questions</a>

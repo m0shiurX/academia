@@ -486,6 +486,15 @@ body {
             font-size: 1em;
             font-weight: 200;
             margin: 1em 0; }
+            .container main .objects .questions .q-list .ans .btn {
+              text-decoration: none;
+              padding: 5px 10px;
+              background: tan;
+              color: white;
+              border-radius: 2px;
+              transition: all .2s ease-in; }
+              .container main .objects .questions .q-list .ans .btn:hover {
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2); }
     .container main .postcard {
       width: 100%;
       background-color: white;
