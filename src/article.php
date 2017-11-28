@@ -46,7 +46,8 @@
         </main>
         <div class="side-bar">
             <div class="buttons">
-                <a href="add2notes.php" class="btn">Add to Notes</a>
+            <a href="add2notes.php" class="btn">Add 2 Notes</a>
+            <a href="#"  onclick="goBack()" class="btn">Back</a>
             </div>
             <div class="top-sidebar">
                 <div class="title">Newsfeed :</div>

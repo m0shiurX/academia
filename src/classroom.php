@@ -73,7 +73,7 @@
         </main>
         <div class="side-bar">
             <div class="buttons">
-                <a href="addsemister.php" class="btn">Add Semister</a>
+                <a  onclick="addSemister()" href="#" class="btn">Add Semister</a>
             </div>
             <div class="top-sidebar">
                 <div class="title">News Feed :</div>

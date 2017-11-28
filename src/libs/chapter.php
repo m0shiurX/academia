@@ -14,15 +14,22 @@
 			return sizeof($semisterData) != 0;
 		}
         
-        public function addSubjcet($name){
-			$request = $this->dbh->prepare("INSERT INTO chapters (chapter_id, name) VALUES(?, ?)");
-			return $request->execute([$chapter_id, $name]);
+        public function addChapter($chapter_id, $name, $description){
+			$request = $this->dbh->prepare("INSERT INTO chapters (subject_id, name, description) VALUES(?, ?, ?)");
+			return $request->execute([$chapter_id, $name, $description]);
 		}
 		
 		public function fetchChapters($limit = 10){
 			$request = $this->dbh->prepare("SELECT * FROM chapters  ORDER BY id  LIMIT $limit");
 			if ($request->execute()) {
 				return $request->fetchAll();
+			}
+			return false;
+		}
+		public function fetchChapterById($id){
+			$request = $this->dbh->prepare("SELECT name FROM chapters  WHERE id = ? LIMIT 1");
+			if ($request->execute([$id])) {
+				return $request->fetch();
 			}
 			return false;
 		}

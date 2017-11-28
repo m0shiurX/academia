@@ -11,15 +11,6 @@
             <div class="logo">
                 <div class="box">
                     <img src="assets/logo.png" alt="CSE">
-                    <!-- <svg class="menubutton" version="1.1" id="Untitled-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="auto" viewBox="0 0 18 12" enable-background="new 0 0 18 12" xml:space="preserve">
-                    <path fill="#FFF" d="z"/>
-                        <g id="Layer_x25_201">
-                            <rect width="100%" height="3"/>
-                            <rect y="5" width="100%" height="3"/>
-                            <rect y="10" width="100%" height="3"/>
-                        </g>
-                    <path fill="none" d="z"/>
-                </svg> -->
                 </div>
             </div>
             <?php include("components/f-menu.php"); ?>

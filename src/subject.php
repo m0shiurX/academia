@@ -1,7 +1,15 @@
 <?php include("components/header.php"); ?>
     <div class="container">
         <div class="top-bar">
-            <h1 class="title">Academia | Chapters </h1>
+            <?php
+            if (isset($_GET['id'])) {
+                    require_once "libs/subject.php";
+                    $subject = new Subject($dbh);
+
+                    $subject = $subject->fetchSubjectById($_GET['id']);
+                    $subject_name = $subject->name;
+            }?>
+            <h1 class="title"><?=isset($subject_name) ? $subject_name : 'Academia'?> | Chapters </h1>
         </div>
         <div class="minimal-menu">
             <div class="logo">
@@ -27,14 +35,11 @@
                             <div class="card">
                                 <a href="chapter.php?id=<?=$chapter->id?>">
                                     <div class="card-image">
-                                        <img src="assets/orange.jpg" alt="Orange" />
+                                        <img src="assets/chapter.jpg" alt="<?=$chapter->name?>" />
                                     </div>
                                     <div class="card-body">
                                         <div class="card-title">
                                             <h3><?=$chapter->name?></h3>
-                                        </div>
-                                        <div class="card-excerpt">
-                                            <p><?=$chapter->description?></p>
                                         </div>
                                     </div>
                                 </a>
@@ -47,12 +52,13 @@
         </main>
         <div class="side-bar">
             <div class="buttons">
-                <a href="addchapter.php" class="btn">Add Chapter</a>
+                <a href="#"  onclick="goBack()" class="btn">Back</a>
+                <a href="#" onclick="addChapter(<?=isset($id) ? $id : 0?>)" class="btn">Add Chapter</a>
             </div>
             <div class="top-sidebar">
-                <div class="title">Subjects and Contents :</div>
+                <div class="title">Newsfeed:</div>
             </div>
-            <?php include("components/ranking.php"); ?>
+            <?php include("components/newsfeed.php"); ?>
         </div>
     </div>
 <?php include("components/footer.php");?>

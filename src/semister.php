@@ -27,14 +27,11 @@
                             <div class="card">
                                 <a href="subject.php?id=<?=$subject->id?>">
                                     <div class="card-image">
-                                        <img src="assets/orange.jpg" alt="Orange" />
+                                        <img src="assets/books.jpg" alt="Orange" />
                                     </div>
                                     <div class="card-body">
                                         <div class="card-title">
                                             <h3><?=$subject->name?></h3>
-                                        </div>
-                                        <div class="card-excerpt">
-                                            <p><?=$subject->name?></p>
                                         </div>
                                     </div>
                                 </a>
@@ -47,7 +44,8 @@
         </main>
         <div class="side-bar">
             <div class="buttons">
-                <a onclick="addSubject()" href="#" class="btn">Add Subjects</a>
+                <a href="#"  onclick="goBack()" class="btn">Back</a>
+                <a onclick="addSubject()" href="#" class="btn">Add Subject</a>
             </div>
             <div class="top-sidebar">
                 <div class="title">Newsfeed :</div>

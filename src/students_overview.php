@@ -43,9 +43,6 @@
                 <div class="informations">
                     <ul>
                         <li><h2><?=$details->name?></h2></li>
-                        <!-- <li>34 Students</li>
-                        <li>15 Male</li>
-                        <li>19 Female</li> -->
                     </ul>
                 </div>
                 <div class="actions">

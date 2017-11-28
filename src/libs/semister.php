@@ -19,7 +19,7 @@
 			return $request->execute([$name]);
 		}
 		
-		public function fetchSemisters($limit = 10){
+		public function fetchSemisters($limit = 100){
 			$request = $this->dbh->prepare("SELECT * FROM semisters  ORDER BY id  LIMIT $limit");
 			if ($request->execute()) {
 				return $request->fetchAll();

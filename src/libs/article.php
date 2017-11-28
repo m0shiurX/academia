@@ -40,6 +40,13 @@
 			}
 			return false;
 		}
+		public function fetchArticleByChapter($topic_id){
+			$request = $this->dbh->prepare("SELECT * FROM articles WHERE  chapter_id = ? ORDER BY id");
+			if ($request->execute([$topic_id])) {
+				return $request->fetchAll();
+			}
+			return false;
+		}
 		
 		public function updateArticle($id, $chapter_id, $name){
 			$request = $this->dbh->prepare("UPDATE articles SET chapter_id = ?, name = ? WHERE id =?");

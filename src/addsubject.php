@@ -1,37 +1,52 @@
 <?php
-    include("components/header.php");
-    if (isset($_POST['name']) && isset($_POST['data'])) {
+    include("components/headx.php");
+    if (isset($_POST['name']) && $_POST['name']!=="" && isset($_POST['semister_id'])) {
         $name = $_POST['name'];
-        $data = $_POST['data'];
-        require_once "libs/article.php";
-        $article = new Article($dbh);
-        if (!$article->addArticle($name, $data)) {
-            echo "Sorry Post Failed !";
+        $semister_id = $_POST['semister_id'];
+        require_once "libs/subject.php";
+        $subject = new Subject($dbh);
+        if ($subject->exists($name)) {
+            $msg = "Subject Already Available !";
+        }elseif (!$subject->addSubject($semister_id, $name)) {
+            $msg = "Sorry Post Failed !";
+        }else{
+            $msg = "Successfully Added";
         }
-        echo "Successfully loaded";
+    }else{
+        $msg = "Fill the field.";
     }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">.
-    <link rel="stylesheet" href="../node_modules/trumbowyg/dist/ui/trumbowyg.min.css">
-    <title>Document</title>
+    <title>New Subject</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <form action="addsubject.php" method="post">
-        <input type="text" name="name">
-        <textarea name="data" id="trumbowyg-demo" autofocus></textarea>
-        <input type="submit" value="Save">
-    </form>
-
-
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="../node_modules/trumbowyg/dist/trumbowyg.min.js"></script>
+<body onunload="javascript:refreshParent()">
+    <div class="float">
+        <div class="msg"><?=$msg?></div>
+        <form action="addsubject.php" method="post">
+            <select name="semister_id" id="semister_id" required>
+            <?php 
+                    require_once "libs/semister.php";
+                    $semister = new Semister($dbh);
+                    $semisters = $semister->fetchSemisters();
+                    if (isset($semisters) && sizeof($semisters) > 0){
+                        foreach ($semisters as $semister) {?>
+                        <option value="">Select an Option</option>
+                        <option value="<?=$semister->id?>"><?=$semister->name?></option>
+                <?php }
+                    }
+            ?>
+            </select>
+            <input type="text" name="name" placeholder="Subject Name" required>
+            <input type="submit" value="ADD">
+        </form>
+    </div>
 <script>
-    $('#trumbowyg-demo').trumbowyg();
+    function refreshParent(){
+        window.opener.location.reload();
+    }
 </script>
 </body>
 </html>

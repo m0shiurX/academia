@@ -87,10 +87,38 @@ var options = {
 }
 new Chart(stat.getContext("2d")).Line(datatable, options);
 
+function addSemister() {
+    let left = (screen.width / 2) - (600 / 2);
+    let top = (screen.height / 2) - (800 / 2);
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
+    open('addsemister.php', 'Packages', params);
+}
 
 function addSubject() {
     let left = (screen.width / 2) - (600 / 2);
     let top = (screen.height / 2) - (800 / 2);
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
     open('addsubject.php', 'Packages', params);
+}
+function addChapter(id) {
+    let left = (screen.width / 2) - (600 / 2);
+    let top = (screen.height / 2) - (800 / 2);
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
+    open('addchapter.php?id='+id, 'Packages', params);
+}
+function addArticle() {
+    let left = (screen.width / 2) - (600 / 2);
+    let top = (screen.height / 2) - (800 / 2);
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
+    open('addarticle.php', 'Packages', params);
+}
+function addObject() {
+    let left = (screen.width / 2) - (600 / 2);
+    let top = (screen.height / 2) - (800 / 2);
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
+    open('addobject.php', 'Packages', params);
+}
+
+function goBack() {
+    window.history.back();
 }

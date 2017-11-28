@@ -13,16 +13,15 @@ body {
   margin: 0 auto;
   width: 100%; }
   .login-container .logo {
-    display: flex;
     width: 250px;
     margin: auto;
     height: 220px;
     background: #fff;
     border-radius: 0 0 230px 230px; }
     .login-container .logo img {
-      margin: 0 auto;
-      width: 180px;
-      height: 170px; }
+      margin-top: 5px;
+      width: 100%;
+      height: auto; }
   .login-container h1 {
     text-align: center;
     font-size: 2em;
@@ -141,9 +140,7 @@ body {
   display: grid;
   grid-template-columns: 180px 3fr 1fr;
   grid-template-rows: 10% auto auto;
-  grid-template-areas: "header header header"
- "menus main side-bar"
- "menus main sidebar";
+  grid-template-areas: "header header header" "menus main side-bar" "menus main sidebar";
   align-items: stretch;
   font-family: Raleway;
   background-color: #f3f3f3;
@@ -483,12 +480,6 @@ body {
       .container main .postcard a {
         color: #333;
         text-decoration: none; }
-      .container main .postcard:hover .card-image img {
-        width: 110%;
-        filter: grayscale(0); }
-      .container main .postcard:hover .card-placeholder img {
-        width: 130%;
-        filter: blur(0); }
       .container main .postcard .card-image {
         height: 300px;
         position: relative;
@@ -502,6 +493,9 @@ body {
           filter: grayscale(1);
           transition-property: filter width;
           transition-duration: .3s; }
+        .container main .postcard .card-image:hover img {
+          width: 110%;
+          filter: grayscale(0); }
       .container main .postcard .card-body {
         text-align: left;
         padding: 5em 3em; }
@@ -636,18 +630,19 @@ body {
     .container .side-bar .buttons {
       margin: 10px auto;
       text-align: center;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2); }
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%; }
       .container .side-bar .buttons .btn {
         text-decoration: none;
-        padding: 15px 50px;
-        width: 100%;
+        padding: 10px 15px;
         background: #3299BB;
         color: white;
         border-radius: 3px;
-        display: inline-block;
-        transition: all .25s ease-in-out; }
+        display: inline;
+        transition: all .25s ease-in; }
         .container .side-bar .buttons .btn:hover {
-          transform: scale(1.05, 1.05);
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2); }
     .container .side-bar .top-sidebar {
       background-color: #008080;
@@ -732,6 +727,39 @@ body {
             height: auto;
             border-radius: 5px; }
 
+.float {
+  display: flex;
+  background: #fff;
+  height: 100vh;
+  flex-direction: column; }
+  .float .msg {
+    color: #1A535C;
+    margin: 20% auto;
+    font-size: 1.5em;
+    font-weight: bold; }
+  .float form {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: AUTO;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around; }
+    .float form select#semister_id {
+      padding: 22px 20px; }
+    .float form input[type="text"] {
+      padding: 20px 25px;
+      font-size: 1.2em;
+      color: #000; }
+    .float form input[type="submit"] {
+      padding: 20px 40px;
+      border: none;
+      background: #008080;
+      color: #fff;
+      font-size: 1.2em;
+      cursor: pointer; }
+
 ::-webkit-scrollbar {
   height: 10px;
   width: 5px;
@@ -752,8 +780,7 @@ body {
     display: grid;
     grid-template-columns: 180px 1fr;
     grid-template-rows: 80px auto;
-    grid-template-areas: "header header"
- "menus main";
+    grid-template-areas: "header header" "menus main";
     align-items: stretch; }
   .side-bar {
     grid-area: side-bar;
@@ -764,8 +791,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 80px auto;
-    grid-template-areas: "header"
- "main";
+    grid-template-areas: "header" "main";
     align-items: stretch; }
     .container .top-bar {
       justify-content: space-around;
