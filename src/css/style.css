@@ -472,6 +472,20 @@ body {
               width: 25%;
               line-height: 50px;
               background: #3299BB; }
+      .container main .objects .questions {
+        padding: 1em;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2); }
+        .container main .objects .questions .q-list {
+          list-style: none;
+          font-size: 1.3em;
+          font-weight: bold; }
+          .container main .objects .questions .q-list .ans {
+            text-indent: 2em;
+            font-size: 1em;
+            font-weight: 200;
+            margin: 1em 0; }
     .container main .postcard {
       width: 100%;
       background-color: white;

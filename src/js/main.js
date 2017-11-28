@@ -212,3 +212,21 @@ function loadArticles(topic_id) {
         $('.objects').html("<h2> Sorry ! No Contents found ! </h2>");
     }
 }
+// load questions by chapter
+
+function loadQuestions(chapter_id) {
+    if (chapter_id != null) {
+        $.ajax({
+            url: "loadQuestions.php",
+            method: "POST",
+            data: "chapter_id=" + chapter_id,
+            success: function (response) {
+                $('.objects').html(response);
+
+            }
+        });
+    }
+    else {
+        $('.objects').html("<h2> Sorry ! No Questions found ! </h2>");
+    }
+}

@@ -645,6 +645,23 @@ body{
 
           }
         }
+        .questions {
+            padding: 1em;
+            width:100%;
+            background: $light;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2);
+            .q-list {
+                list-style: none;
+                font-size: 1.3em;
+                font-weight: bold;
+              .ans{
+                text-indent: 2em;
+                font-size: 1em;
+                font-weight: 200;
+                margin: 1em 0;
+              }
+            }
+        }
       }
 
 

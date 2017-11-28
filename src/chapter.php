@@ -57,7 +57,7 @@
                 <a href="#" class="btn">Add Article</a>
             </div>
             <div class="buttons">
-                <a href="questions.php" class="btn">Questions</a>
+                <a href="#"  onclick="loadQuestions(<?=$id?>)" class="btn">Questions</a>
             </div>
             <div class="top-sidebar">
                 <div class="title">Topics </div>
