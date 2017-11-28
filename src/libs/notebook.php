@@ -7,16 +7,16 @@
 		{
 			$this->dbh = $db->dbh;
 		}
-		public function exists( $name ){
-			$request = $this->dbh->prepare("SELECT name FROM notebook WHERE name = ?");
-			$request->execute([$name]);
+		public function exists( $article_id, $account_id ){
+			$request = $this->dbh->prepare("SELECT * FROM notebook WHERE account_id = ? AND article_id = ?");
+			$request->execute([ $article_id, $account_id ]);
 			$semisterData = $request->fetchAll();
 			return sizeof($semisterData) != 0;
 		}
         
-        public function addNotebook($name){
-			$request = $this->dbh->prepare("INSERT INTO notebook (name) VALUES(?)");
-			return $request->execute([$name]);
+        public function add2Notebook( $article_id, $account_id){
+			$request = $this->dbh->prepare("INSERT INTO notebook (account_id, article_id) VALUES(?,?)");
+			return $request->execute([ $article_id, $account_id]);
 		}
 		
 		public function fetchNotebooks($limit = 100){

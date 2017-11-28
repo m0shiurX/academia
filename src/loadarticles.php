@@ -16,9 +16,6 @@
                         <div class="card-title">
                             <h3><?=$article->name?></h3>
                         </div>
-                        <div class="card-excerpt">
-                            <p><?=$article->name?></p>
-                        </div>
                     </div>
                 </a>
             </div>

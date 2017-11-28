@@ -136,6 +136,24 @@ function addObject() {
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
     open('addobject.php', 'Packages', params);
 }
+function add2Note(article, account) {
+    console.log("Function Called");
+    if (article != null) {
+        console.log("ajax Called");
+        $.ajax({
+            url: "add2note.php",
+            method: "POST",
+            data: "article_id="+article+"&account_id="+account,
+            success: function (response) {
+                $('.plus').text(response);
+                console.log(response+"lo");
+            }
+        });
+    }
+    else {
+        $('.plus').text("<h2> Sorry! </h2>");
+    }
+}
 
 // Go backward
 function goBack() {

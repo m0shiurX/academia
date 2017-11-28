@@ -33,9 +33,9 @@
                                         <div class="card-title">
                                             <h3><?=$note->notes?></h3>
                                         </div>
-                                        <div class="card-excerpt">
+<!--                                         <div class="card-excerpt">
                                             <p><?=$note->article_id?></p>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </a>
                             </div>

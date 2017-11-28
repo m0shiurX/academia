@@ -302,7 +302,7 @@ body {
     .container main .objects {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: space-between;
       align-content: flex-start; }
       .container main .objects .widget {
         width: 100%;
@@ -475,15 +475,26 @@ body {
     .container main .postcard {
       width: 100%;
       background-color: white;
-      box-shadow: 0px 5px 10px rgba(85, 85, 85, 0.5);
-      margin: 6px 1px; }
+      box-shadow: 0px 5px 10px rgba(85, 85, 85, 0.5); }
       .container main .postcard a {
         color: #333;
         text-decoration: none; }
       .container main .postcard .card-image {
-        height: 300px;
+        height: 320px;
         position: relative;
         overflow: hidden; }
+        .container main .postcard .card-image .plus {
+          position: absolute;
+          font-size: 3em;
+          bottom: 10px;
+          right: 45px;
+          background: #673AB7;
+          width: 50px;
+          height: 50px;
+          text-align: center;
+          border-radius: 50%;
+          color: #FFF;
+          cursor: pointer; }
         .container main .postcard .card-image img {
           width: 100%;
           position: absolute;
@@ -498,14 +509,29 @@ body {
           filter: grayscale(0); }
       .container main .postcard .card-body {
         text-align: left;
-        padding: 5em 3em; }
+        padding: 5em 3em;
+        text-align: justify; }
       .container main .postcard .card-title {
+        color: #1A535C;
         text-align: left;
         text-transform: uppercase;
-        font-weight: bold;
-        font-size: 1.8em;
-        margin-bottom: 3em; }
+        font-size: 1.4em;
+        margin-bottom: 1em; }
+      .container main .postcard .card-excerpt .author img {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        margin-right: 10px;
+        float: left; }
+      .container main .postcard .card-excerpt .author h4 {
+        color: #1c1c1c; }
+      .container main .postcard .card-excerpt date {
+        font-style: italic;
+        color: #008080;
+        font-weight: 200;
+        font-size: .9em; }
       .container main .postcard .card-excerpt p {
+        margin-top: 1em;
         font-family: Helvetica, sans-serif;
         font-size: 1.3em;
         display: block;
@@ -515,21 +541,34 @@ body {
         line-height: 1.7;
         font-size-adjust: 100%; }
     .container main .card {
-      width: 220px;
+      width: 200px;
       background-color: white;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2);
       margin: 6px 1px; }
       .container main .card a {
         color: #333;
         text-decoration: none; }
+      .container main .card:first-child {
+        min-width: 100%;
+        height: 300px; }
+        .container main .card:first-child .card-image {
+          height: 250px;
+          position: relative;
+          overflow: hidden; }
+          .container main .card:first-child .card-image img {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: grayscale(1);
+            transition-property: filter width;
+            transition-duration: .3s; }
       .container main .card:hover .card-image img {
         width: 110%;
         filter: grayscale(0); }
-      .container main .card:hover .card-placeholder img {
-        width: 130%;
-        filter: blur(0); }
       .container main .card .card-image {
-        height: 130px;
+        height: 110px;
         position: relative;
         overflow: hidden; }
         .container main .card .card-image img {
@@ -543,13 +582,11 @@ body {
           transition-duration: .3s; }
       .container main .card .card-body {
         text-align: left;
-        padding: 1em 1em; }
+        padding: .8em .5em; }
       .container main .card .card-title {
         text-align: left;
         text-transform: uppercase;
         font-weight: bold; }
-      .container main .card .card-excerpt {
-        color: #777; }
   .container .flextable {
     display: flex;
     flex-flow: column nowrap;

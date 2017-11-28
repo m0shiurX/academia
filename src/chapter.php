@@ -33,17 +33,14 @@
                         $articles = $articles->fetchArticleByChapter($id);
                         if (isset($articles) && sizeof($articles) > 0){
                             foreach ($articles as $article) { ?>
-                            <div class="card">
+                            <div class="card cover">
                                 <a href="article.php?id=<?=$article->id?>">
                                     <div class="card-image">
-                                        <img src="assets/orange.jpg" alt="Orange" />
+                                        <img src="assets/chapter.jpg" alt="Orange" />
                                     </div>
                                     <div class="card-body">
                                         <div class="card-title">
                                             <h3><?=$article->name?></h3>
-                                        </div>
-                                        <div class="card-excerpt">
-                                            <p><?=$article->name?></p>
                                         </div>
                                     </div>
                                 </a>

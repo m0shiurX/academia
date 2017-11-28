@@ -28,12 +28,18 @@
                             <div class="postcard">
                                     <div class="card-image">
                                         <img src="assets/orange.jpg" alt="Orange" />
+                                        <div onclick="add2Note(<?=$_SESSION['id']?>,<?=$article->id?>)"" class="plus">+</div>
                                     </div>
                                     <div class="card-body">
                                         <div class="card-title">
                                             <h3><?=$article->name?></h3>
                                         </div>
                                         <div class="card-excerpt">
+                                            <div class="author"> 
+                                                <img src="assets/prof.jpg" alt="M" />
+                                                 <h4>Md Moshiur Rahman</h4>
+                                            </div>
+                                            <date> August 1st, 2017 </date>
                                             <p><?=$article->data?></p>
                                         </div>
                                     </div>
@@ -46,7 +52,7 @@
         </main>
         <div class="side-bar">
             <div class="buttons">
-            <a href="add2notes.php" class="btn">Add 2 Notes</a>
+            <a href="add2notes.php" class="btn">Ask Questions</a>
             <a href="#"  onclick="goBack()" class="btn">Back</a>
             </div>
             <div class="top-sidebar">
