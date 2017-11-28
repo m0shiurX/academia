@@ -157,6 +157,12 @@ function askQuestion() {
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
     open('askquestion.php', 'Packages', params);
 }
+function answerNow(id) {
+    let left = (screen.width / 2) - (600 / 2);
+    let top = (screen.height / 2) - (800 / 2);
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
+    open('answernow.php?q_id='+id, 'Packages', params);
+}
 // Adding to notes
 function add2Note(article, account) {
     if (article != null) {

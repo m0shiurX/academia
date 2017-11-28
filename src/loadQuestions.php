@@ -15,7 +15,7 @@
                                 require_once "libs/answer.php";
                                 $answers = new Answer($dbh);
                                 if (!$answer = $answers->fetchAnswer($q->id)) {
-                                    ?><i>No answer availale ! </i> <a href="#" onclick="answerNow()" class="btn"> Answer Now </a> <?php
+                                    ?><i>No answer availale ! </i> <a href="#" onclick="answerNow(<?=$q->id?>)" class="btn"> Answer Now </a> <?php
                                 }else{
                                     $ans =  $answer->answer;
                                     echo $ans;
