@@ -548,22 +548,6 @@ body {
       .container main .card a {
         color: #333;
         text-decoration: none; }
-      .container main .card:first-child {
-        min-width: 100%;
-        height: 300px; }
-        .container main .card:first-child .card-image {
-          height: 250px;
-          position: relative;
-          overflow: hidden; }
-          .container main .card:first-child .card-image img {
-            width: 100%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            filter: grayscale(1);
-            transition-property: filter width;
-            transition-duration: .3s; }
       .container main .card:hover .card-image img {
         width: 110%;
         filter: grayscale(0); }
@@ -584,6 +568,53 @@ body {
         text-align: left;
         padding: .8em .5em; }
       .container main .card .card-title {
+        text-align: left;
+        text-transform: uppercase;
+        font-weight: bold; }
+    .container main .displaycard {
+      width: 200px;
+      background-color: white;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2);
+      margin: 6px 1px; }
+      .container main .displaycard a {
+        color: #333;
+        text-decoration: none; }
+      .container main .displaycard:first-child {
+        min-width: 100%;
+        height: 300px; }
+        .container main .displaycard:first-child .card-image {
+          height: 250px;
+          position: relative;
+          overflow: hidden; }
+          .container main .displaycard:first-child .card-image img {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: grayscale(1);
+            transition-property: filter width;
+            transition-duration: .3s; }
+      .container main .displaycard:hover .card-image img {
+        width: 110%;
+        filter: grayscale(0); }
+      .container main .displaycard .card-image {
+        height: 110px;
+        position: relative;
+        overflow: hidden; }
+        .container main .displaycard .card-image img {
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          filter: grayscale(1);
+          transition-property: filter width;
+          transition-duration: .3s; }
+      .container main .displaycard .card-body {
+        text-align: left;
+        padding: .8em .5em; }
+      .container main .displaycard .card-title {
         text-align: left;
         text-transform: uppercase;
         font-weight: bold; }
@@ -787,6 +818,9 @@ body {
             font-style: italic;
             font-size: .8em;
             color: #aaaaaa; }
+          .container .side-bar .newsfeed .news li p i > a {
+            color: tan;
+            text-decoration: none; }
         .container .side-bar .newsfeed .news li .box {
           height: auto;
           width: 64px;

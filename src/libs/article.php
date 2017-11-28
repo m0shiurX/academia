@@ -33,6 +33,13 @@
 			}
 			return false;
 		}
+		public function fetchArticleByAccountID($id){
+			$request = $this->dbh->prepare("SELECT * FROM articles WHERE  author_id = ?");
+			if ($request->execute([$id])) {
+				return $request->fetchAll();
+			}
+			return false;
+		}
 		public function fetchArticleByTopic($topic_id){
 			$request = $this->dbh->prepare("SELECT * FROM articles WHERE  topic_id = ? ORDER BY id");
 			if ($request->execute([$topic_id])) {

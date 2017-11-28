@@ -31,9 +31,9 @@
                         if (isset($accounts) && sizeof($accounts) > 0){ 
                             foreach ($accounts as $account) { ?>
                             <div class="card">
-                                <a href="profile.php?id=<?=$account->fullname?>">
+                                <a href="profile.php?id=<?=$account->username?>">
                                     <div class="card-image">
-                                        <img src="assets/orange.jpg" alt="Orange" />
+                                        <img src="assets/prof.jpg" alt="Orange" />
                                     </div>
                                     <div class="card-body">
                                         <div class="card-title">

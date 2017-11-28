@@ -151,22 +151,40 @@ function addObject() {
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
     open('addobject.php', 'Packages', params);
 }
+// Adding to notes
 function add2Note(article, account) {
-    console.log("Function Called");
     if (article != null) {
-        console.log("ajax Called");
         $.ajax({
             url: "add2note.php",
             method: "POST",
             data: "article_id="+article+"&account_id="+account,
             success: function (response) {
                 $('.plus').text(response);
-                console.log(response+"lo");
             }
         });
     }
     else {
         $('.plus').text("<h2> Sorry! </h2>");
+    }
+}
+
+// Individual promotions for students
+function promoteOne(semister, account) {
+    var msgs = $(this).parent();
+    var rows = $(this).closest('.trow');
+    if (account != null) {
+        $.ajax({
+            url: "students_overview.php",
+            method: "POST",
+            data: "semister_id="+semister+"&account_id="+account,
+            success: function (response) {
+                $(rows).fadeOut();
+            }
+        });
+    }
+    else {
+        $(msgs).text('Sorry !');
+        $(rows).fadeOut();
     }
 }
 

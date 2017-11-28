@@ -10,7 +10,7 @@
                     $chapter_id = $chapter->id;
                     $subject_id = $chapter->subject_id;
             }?>
-            <h1 class="title"><?=isset($chapter_name) ? $chapter_name : 'Academia | Topics'?></h1>
+            <h1 class="title"><?=isset($chapter_name) ? $chapter_name : 'Academia'?> | Articles </h1>
         </div>
         <div class="minimal-menu">
             <div class="logo">
@@ -33,7 +33,7 @@
                         $articles = $articles->fetchArticleByChapter($id);
                         if (isset($articles) && sizeof($articles) > 0){
                             foreach ($articles as $article) { ?>
-                            <div class="card cover">
+                            <div class="displaycard">
                                 <a href="article.php?id=<?=$article->id?>">
                                     <div class="card-image">
                                         <img src="assets/chapter.jpg" alt="Orange" />

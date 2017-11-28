@@ -1,12 +1,22 @@
 <?php include("components/header.php"); ?>
 <?php
     if (isset($_POST['current_semister'])) {
-
         require_once "libs/account.php";        
         $semisterUpdate = new Account($dbh);
         $currentSemister = $_POST['current_semister'];
         $nextSemister = $_POST['semister'];
         if ($semisterUpdate->updateStudentSemister($nextSemister, $currentSemister)) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+    if (isset($_POST['semister_id'])) {
+        require_once "libs/account.php";        
+        $semisterUpdate = new Account($dbh);
+        $semister = $_POST['semister_id']+1;
+        $account = $_POST['account_id'];
+        if ($semisterUpdate->updateIndividualStudentSemister($account, $semister)) {
             return true;
         }else{
             return false;
@@ -55,7 +65,8 @@
                                         if (isset($semisters) && sizeof($semisters) > 0){
                                             foreach ($semisters as $semister) {
                                                 $new = $semister->id;
-                                                if ($current >= $new || $current+1 < $new){ ?>
+                                                //if ($current >= $new || $current+1 < $new){
+                                                if ($current >= $new){ ?>
                                                     <option value="" disabled><?=$semister->name?></option>
                                             <?php }else{?>
                                                     <option value="<?=$new?>"><?=$semister->name?></option>
@@ -74,11 +85,12 @@
             </div>
             <div class="flextable">
                 <div class="trow thead">
-                    <div class="tcolumn">Roll No</div>
+                    <div style="flex-grow:.3" class="tcolumn">Roll</div>
                     <div class="tcolumn">Name</div>
-                    <div class="tcolumn">Gender</div>
+                    <div style="flex-grow:0.5"  class="tcolumn">Gender</div>
+                    <div class="tcolumn">Address</div>
                     <div class="tcolumn">Contact</div>
-                    <!-- <div class="tcolumn">Stat</div> -->
+                    <div class="tcolumn">Action</div>
                 </div>
                 <?php
                     if (isset($_GET['id'])) {
@@ -89,11 +101,12 @@
                         if (isset($informations) && sizeof($informations) > 0){ 
                             foreach ($informations as $info) { ?>
                             <div class="trow">
-                                <div class="tcolumn" data-header="semister"><?=$info->id?></div>
+                                <div style="flex-grow:0.3" class="tcolumn" data-header="semister"><?=$info->id?></div>
                                 <div class="tcolumn" data-header="semister"><?=$info->fullname?></div>
-                                <div class="tcolumn" data-header="semister"><?=$info->gender?></div>
+                                <div style="flex-grow:0.4" class="tcolumn" data-header="semister"><?=$info->gender?></div>
+                                <div class="tcolumn" data-header="semister"><?=$info->address?></div>
                                 <div class="tcolumn" data-header="semister"><?=$info->contact?></div>
-                                <!-- <div class="tcolumn button" data-header=""><a href="student_stat.php?id=<?=$semister->id?>" class="btn">STAT</a></div> -->
+                                <div class="tcolumn button" data-header=""><a href="#" onclick="promoteOne(<?=$info->semister_id?>,<?=$info->id?>)" class="btn">Promote</a></div>
                             </div>
 
                         <?php }

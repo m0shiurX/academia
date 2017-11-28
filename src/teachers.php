@@ -1,7 +1,7 @@
 <?php include("components/header.php"); ?>
     <div class="container">
         <div class="top-bar">
-            <h1 class="title">Academia | Friends</h1>
+            <h1 class="title">Academia | Teachers</h1>
             <span>
                 <span><?php echo $_SESSION['user']; ?></span>
                 <span class="box"><img src="assets/prof.jpg" alt="" srcset=""></span>
@@ -31,9 +31,9 @@
                         if (isset($accounts) && sizeof($accounts) > 0){ 
                             foreach ($accounts as $account) { ?>
                             <div class="card">
-                                <a href="profile.php?id=<?=$account->fullname?>">
+                                <a href="profile.php?id=<?=$account->username?>">
                                     <div class="card-image">
-                                        <img src="assets/orange.jpg" alt="Orange" />
+                                        <img src="assets/prof.jpg" alt="Orange" />
                                     </div>
                                     <div class="card-body">
                                         <div class="card-title">

@@ -25,7 +25,7 @@
                             $semister_id = $subject->semister_id;
                              ?>
                             <div class="card">
-                                <a href="chapter.php?id=<?=$subject->id?>">
+                                <a href="subject.php?id=<?=$subject->id?>">
                                     <div class="card-image">
                                         <img src="assets/orange.jpg" alt="Orange" />
                                     </div>

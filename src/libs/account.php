@@ -65,7 +65,7 @@
 			return false;
 		}
 		public function fetcStudentsInfobySemister($semister_id){
-			$request = $this->dbh->prepare("SELECT id, fullname, address, contact, gender  FROM accounts WHERE role = 'student' and status = 1 and semister_id = ?");
+			$request = $this->dbh->prepare("SELECT id, fullname, address, contact, gender, semister_id  FROM accounts WHERE role = 'student' and status = 1 and semister_id = ?");
 			if ($request->execute([$semister_id])) {
 				return $request->fetchAll();
 			}
@@ -110,6 +110,12 @@
 			$request = $this->dbh->prepare("UPDATE accounts SET semister_id = ? WHERE semister_id = ? AND status = 1 AND role = 'student'");
 			return $request->execute([$new_semister, $present_semister]);
 		}
+		
+		public function updateIndividualStudentSemister($account, $semister){
+			$request = $this->dbh->prepare("UPDATE accounts SET semister_id = ? WHERE id = ? AND status = 1 AND role = 'student'");
+			return $request->execute([$semister, $account]);
+		}
+
 		public function activateStudent($id){
 			$request = $this->dbh->prepare("UPDATE accounts SET status = 1, semister_id = 1 WHERE id = ? AND role = 'student'");
 			return $request->execute([$id]);

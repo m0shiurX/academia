@@ -19,7 +19,8 @@
                             $difference = $date->diff($now)->format("%d days, %h hours and %i minuts");
                             ?>
                             <li>
-                                <p><?=$account->fullname?> has added <i><?=$article->name?></i>.<br> 
+                                    <p><?=$account->fullname?> has added <i><a href="article.php?id=<?=$article->id?>"><?=$article->name?></i></a>.
+                                        <br> 
                                     <span><?=$difference?> ago</span>
                                 </p>
                                 <div class="box"><img src="assets/prof.jpg" alt="" srcset=""></div>

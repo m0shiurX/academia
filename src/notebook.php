@@ -25,7 +25,7 @@
                         if (isset($notebook) && sizeof($notebook) > 0){
                             foreach ($notebook as $note) { ?>
                             <div class="card">
-                                <a href="article.php?id=<?=$note->id?>">
+                                <a href="article.php?id=<?=$note->article_id?>">
                                     <div class="card-image">
                                         <img src="assets/orange.jpg" alt="Orange" />
                                     </div>

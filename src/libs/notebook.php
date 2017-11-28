@@ -27,7 +27,7 @@
 			return false;
 		}
 		public function fetchNotebookById($id){
-			$request = $this->dbh->prepare("SELECT * FROM notebook WHERE account_id = ? ORDER BY id");
+			$request = $this->dbh->prepare("SELECT * FROM notebook WHERE account_id = ? ORDER BY id DESC");
 			if ($request->execute([$id])) {
 				return $request->fetchAll();
 			}
