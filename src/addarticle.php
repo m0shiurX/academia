@@ -13,8 +13,8 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
 <link href="css/summernote.css" rel="stylesheet">
 <body>
 <div class="summernote container">
@@ -41,7 +41,7 @@
 
 <!-- include libries(jQuery, bootstrap) -->
 <script src="js/jquery.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/summernote.min.js"></script>
 
 <script type="text/javascript">

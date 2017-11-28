@@ -31,7 +31,7 @@
                         if (isset($article) && sizeof($article) > 0){?>
                             <div class="postcard">
                                     <div class="card-image">
-                                        <img src="assets/orange.jpg" alt="Orange" />
+                                        <img src="assets/chapter.png" alt="Orange" />
                                         <div onclick="add2Note(<?=$_SESSION['id']?>,<?=$article->id?>)"" class="plus">+</div>
                                     </div>
                                     <div class="card-body">
