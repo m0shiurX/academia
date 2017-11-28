@@ -119,7 +119,7 @@ body {
       font-style: italic; }
       .login-container .form-group p a {
         text-decoration: none;
-        color: #1c1c1c; }
+        color: #27282c; }
     .login-container .form-group input {
       padding: 15px 60px;
       display: block;
@@ -180,7 +180,7 @@ body {
     top: 0;
     left: 0px;
     z-index: 12;
-    background: #1c1c1c;
+    background: #27282c;
     width: 180px;
     height: 550px !important;
     border-radius: 0 0 100px 100px;
@@ -205,7 +205,7 @@ body {
         .container .floating-menu .f-menu li:hover {
           background-color: #fff; }
           .container .floating-menu .f-menu li:hover a {
-            color: #1c1c1c;
+            color: #27282c;
             font-weight: 600; }
         .container .floating-menu .f-menu li a {
           padding-left: 2em;
@@ -221,7 +221,7 @@ body {
     top: 0;
     left: 0;
     z-index: 12;
-    background: #1c1c1c;
+    background: #27282c;
     width: 180px;
     height: 150px;
     border-radius: 0 0 100px 100px;
@@ -345,7 +345,7 @@ body {
                 display: block;
                 padding: 0 1.5em;
                 text-decoration: none;
-                color: #1c1c1c; }
+                color: #27282c; }
                 @media only screen and (min-width: 700px) {
                   .container main .objects .widget .chart .controls nav a {
                     padding: 0 1em; } }
@@ -524,7 +524,7 @@ body {
         margin-right: 10px;
         float: left; }
       .container main .postcard .card-excerpt .author h4 {
-        color: #1c1c1c; }
+        color: #27282c; }
       .container main .postcard .card-excerpt date {
         font-style: italic;
         color: #008080;
@@ -608,7 +608,7 @@ body {
         color: #fff; }
       .container .flextable .trow:nth-of-type(odd) {
         background-color: #fff;
-        color: #1c1c1c; }
+        color: #27282c; }
       @media (min-width: 500px) {
         .container .flextable .trow {
           display: flex;
@@ -616,7 +616,7 @@ body {
           transition: all .5s ease-in-out; }
           .container .flextable .trow:nth-of-type(even) {
             background-color: #fff;
-            color: #1c1c1c; }
+            color: #27282c; }
           .container .flextable .trow:nth-of-type(odd) {
             background-color: #3299BB;
             color: #fff; }
@@ -624,7 +624,7 @@ body {
             transform: scale(1.02, 1.02);
             cursor: pointer;
             color: #fff;
-            background-color: #1c1c1c; } }
+            background-color: #27282c; } }
       .container .flextable .trow .tcolumn {
         display: flex;
         flex-flow: row nowrap;
@@ -648,7 +648,7 @@ body {
         .container .flextable .trow .tcolumn .btn {
           text-align: center;
           text-decoration: none;
-          background: #1c1c1c;
+          background: #27282c;
           color: white;
           padding: .5em;
           width: 60%; }
@@ -721,7 +721,7 @@ body {
         font-size: 1.3em;
         margin-left: 10px;
         width: 70%;
-        color: #1c1c1c; }
+        color: #27282c; }
       .container .side-bar .ranking .person li .box {
         height: 64px;
         width: 64px;
@@ -754,12 +754,12 @@ body {
           .container .side-bar .topics .topic_list li a {
             text-decoration: none;
             text-align: left;
-            color: #1c1c1c;
+            color: #27282c;
             font-family: Arial, Helvetica, sans-serif; }
           .container .side-bar .topics .topic_list li:hover {
             background-color: #e9ebee; }
             .container .side-bar .topics .topic_list li:hover a {
-              color: #1c1c1c;
+              color: #27282c;
               font-family: Arial, Helvetica, sans-serif; }
     .container .side-bar .newsfeed .news {
       background-color: #fff;
@@ -782,7 +782,7 @@ body {
         .container .side-bar .newsfeed .news li p {
           margin-right: 5px;
           font-size: .9em;
-          color: #1c1c1c; }
+          color: #27282c; }
           .container .side-bar .newsfeed .news li p span {
             font-style: italic;
             font-size: .8em;
@@ -880,7 +880,7 @@ body {
       top: 0;
       left: 0;
       z-index: 12;
-      background: #1c1c1c;
+      background: #27282c;
       width: 180px;
       height: 150px !important;
       border-radius: 0 0 100px 100px;

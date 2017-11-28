@@ -20,6 +20,21 @@ $(document).ready(()=>{
             }
         });
     });
+    // Activation panel
+    $(".tactivator").click(function(){
+        let dataID = $(this).attr('data-id');
+        let msg = $(this).parent();
+        let row = $(this).closest('.trow');
+        $.ajax({
+            url: "activateteachers.php",
+            method: "POST",
+            data: "id=" + dataID,
+            success: function () {
+                $(msg).text('Approved !');
+                $(row).fadeOut();
+            }
+        });
+    });
 
     // Student promotion form
     $('#insert_form').on('submit', function (event) {

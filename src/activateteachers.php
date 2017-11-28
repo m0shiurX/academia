@@ -4,7 +4,7 @@
         require_once "libs/account.php";        
         $activation = new Account($dbh);
         $id = $_POST['id'];
-        if ($activation->activateStudent($id)) {
+        if ($activation->activateTeacher($id)) {
             return true;
         }else{
             return false;
@@ -36,7 +36,7 @@
                     </ul>
                 </div>
                 <div class="actions">
-                    <a class="btn" href="activateteachers.php" id="promotion">TEACHERS</a>
+                    <button class="btn" onclick="goBack()" type="button" >BACK</button>
                 </div>
             </div>
             <div class="flextable">
@@ -50,16 +50,16 @@
                 <?php
                         require_once "libs/account.php";
                         $accounts = new Account($dbh);
-                        $deactivatedStudents = $accounts->fetcDeactivatedStudents(); 
-                        if (isset($deactivatedStudents) && sizeof($deactivatedStudents) > 0){ 
-                            foreach ($deactivatedStudents as $deStudent) { ?>
+                        $deactivateTeachers = $accounts->fetcDeactivatedTeachers(); 
+                        if (isset($deactivateTeachers) && sizeof($deactivateTeachers) > 0){ 
+                            foreach ($deactivateTeachers as $deTeacher) { ?>
                             <div class="trow">
-                                <div class="tcolumn" data-header="semister"><?=$deStudent->fullname?></div>
-                                <div class="tcolumn" data-header="semister"><?=$deStudent->gender?></div>
-                                <div class="tcolumn" data-header="semister"><?=$deStudent->address?></div>
-                                <div class="tcolumn" data-header="semister"><?=$deStudent->contact?></div>
+                                <div class="tcolumn" data-header="semister"><?=$deTeacher->fullname?></div>
+                                <div class="tcolumn" data-header="semister"><?=$deTeacher->gender?></div>
+                                <div class="tcolumn" data-header="semister"><?=$deTeacher->address?></div>
+                                <div class="tcolumn" data-header="semister"><?=$deTeacher->contact?></div>
                                 <div class="tcolumn button msg">
-                                    <a  class="btn activator" data-id="<?=$deStudent->id?>" href="#">ACTIVATE</a>
+                                    <a  class="btn tactivator" data-id="<?=$deTeacher->id?>" href="#">ACTIVATE</a>
                                 </div>
                             </div>
                         <?php }
