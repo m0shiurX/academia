@@ -11,6 +11,10 @@
                     $subject_id = $chapter->subject_id;
             }?>
             <h1 class="title"><?=isset($chapter_name) ? $chapter_name : 'Academia'?> | Articles </h1>
+            <span>
+                <span><?php echo $_SESSION['user']; ?></span>
+                <span class="box"><img src="assets/prof.jpg" alt="" srcset=""></span>
+            </span>
         </div>
         <div class="minimal-menu">
             <div class="logo">

@@ -10,6 +10,10 @@
                     $subject_name = $subject->name;
             }?>
             <h1 class="title"><?=isset($subject_name) ? $subject_name : 'Academia'?> | Chapters </h1>
+            <span>
+                <span><?php echo $_SESSION['user']; ?></span>
+                <span class="box"><img src="assets/prof.jpg" alt="" srcset=""></span>
+            </span>
         </div>
         <div class="minimal-menu">
             <div class="logo">

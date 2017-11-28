@@ -2,6 +2,10 @@
     <div class="container">
         <div class="top-bar">
             <h1 class="title">Academia | Notebook </h1>
+            <span>
+                <span><?php echo $_SESSION['user']; ?></span>
+                <span class="box"><img src="assets/prof.jpg" alt="" srcset=""></span>
+            </span>
         </div>
         <div class="floating-menu">
             <div class="logo">
