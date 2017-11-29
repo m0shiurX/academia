@@ -13,9 +13,9 @@
 			$semisterData = $request->fetchAll();
 			return sizeof($semisterData) != 0;
 		}
-        public function addAnswer($q_id, $data){
-			$request = $this->dbh->prepare("INSERT INTO answers (q_id, answer) VALUES(?,?)");
-			return $request->execute([$q_id, $data]);
+        public function addAnswer($q_id, $data, $author){
+			$request = $this->dbh->prepare("INSERT INTO answers (q_id, answer, answered_by) VALUES(?,?,?)");
+			return $request->execute([$q_id, $data, $author]);
 		}
 		
 		public function fetchAnswer($id){

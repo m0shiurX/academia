@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link href="css/summernote.css" rel="stylesheet">
-<body>
+<body onunload="javascript:refreshParent()">
 <div class="summernote container">
 	
 	<div class="row">
@@ -42,7 +42,7 @@
 			
 			<br/>
 			<button type="submit" class="btn btn-primary">Save</button>
-			<button type="button" id="cancel" class="btn">Cancel</button>
+			<button type="button" id="cancel" onclick="javascript:window.close()" class="btn btn-danger">Close</button>
 		    
 		</form>
 		</div>
@@ -66,6 +66,9 @@ $(document).ready(function() {
 function postForm() {
 
 	$('textarea[name="data"]').html($('#summernote').code());
+}
+function refreshParent(){
+	window.opener.location.reload();
 }
 </script>
 </body>

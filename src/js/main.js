@@ -145,11 +145,11 @@ function addArticle(sub, chapter, author) {
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
     open('addarticle.php?sub='+sub+'&chapter='+chapter+'&author='+author, 'Packages', params);
 }
-function askQuestion() {
+function askQuestion(id) {
     let left = (screen.width / 2) - (600 / 2);
     let top = (screen.height / 2) - (800 / 2);
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
-    open('askquestion.php', 'Packages', params);
+    open('askquestion.php?q_id='+id, 'Packages', params);
 }
 function answerNow(id) {
     let left = (screen.width / 2) - (600 / 2);

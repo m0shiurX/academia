@@ -56,7 +56,7 @@
         </main>
         <div class="side-bar">
             <div class="buttons">
-            <a href="#" onclick="askQuestion()" class="btn">Ask Questions</a>
+            <a href="#" onclick="askQuestion(<?=$article->id?>)" class="btn">Ask Questions</a>
             <a href="#"  onclick="goBack()" class="btn">Back</a>
             </div>
             <div class="top-sidebar">

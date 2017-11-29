@@ -3,12 +3,14 @@
     if (isset($_POST['q_id']) && isset($_POST['answer'])) {
         $data = $_POST['answer'];
         $q_id = $_POST['q_id'];
+        $author = $_SESSION['id'];
         require_once "libs/answer.php";
         $answer = new Answer($dbh);
-        if (!$answer->addAnswer($q_id, $data)) {
+        if (!$answer->addAnswer($q_id, $data, $author)) {
             echo "Sorry Failed !";
+        }else{
+            echo "Successfully Answered";
         }
-        echo "Successfully Answered";
     }
 ?>
 <!DOCTYPE html>

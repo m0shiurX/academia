@@ -14,9 +14,9 @@
 			return sizeof($semisterData) != 0;
 		}
         
-        public function addQuestion($data){
-			$request = $this->dbh->prepare("INSERT INTO questions (question) VALUES(?)");
-			return $request->execute([$data]);
+        public function addQuestion($subject, $chapter, $topic, $article_id, $questioned_by, $data){
+			$request = $this->dbh->prepare("INSERT INTO questions (subject_id, chapter_id, topic_id, article_id, questioned_by, question) VALUES(?,?,?,?,?,?)");
+			return $request->execute([$subject, $chapter, $topic, $article_id, $questioned_by, $data]);
 		}
 		
 		public function fetchQuestions($limit = 100){
