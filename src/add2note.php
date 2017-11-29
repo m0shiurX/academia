@@ -6,13 +6,13 @@
         $article_id = $_POST['article_id'];
         $account_id = $_POST['account_id'];
         if ($notebook->exists($article_id, $account_id)) {
-            echo "x";
+            print "x";
         }elseif (!$notebook->add2Notebook($article_id, $account_id)) {
-            echo "sorry";
+            echo "ok";
         }else{
-            echo "Done";
+            echo "3";
         }
     }else{
-        echo ":O";
+        echo "<i class='fa fa-times'></i>";
     }
 ?>

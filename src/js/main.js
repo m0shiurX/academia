@@ -139,17 +139,11 @@ function addTopic(subject, chapter) {
     open('addtopic.php?subject='+subject+'&chapter='+chapter, 'Packages', params);
 }
 
-function addArticle() {
+function addArticle(sub, chapter, author) {
     let left = (screen.width / 2) - (600 / 2);
     let top = (screen.height / 2) - (800 / 2);
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
-    open('addarticle.php', 'Packages', params);
-}
-function addObject() {
-    let left = (screen.width / 2) - (600 / 2);
-    let top = (screen.height / 2) - (800 / 2);
-    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=800,left=${left},top=${top}`;
-    open('addobject.php', 'Packages', params);
+    open('addarticle.php?sub='+sub+'&chapter='+chapter+'&author='+author, 'Packages', params);
 }
 function askQuestion() {
     let left = (screen.width / 2) - (600 / 2);

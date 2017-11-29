@@ -14,9 +14,9 @@
 			return sizeof($semisterData) != 0;
 		}
         
-        public function addArticle($name,$data){
-			$request = $this->dbh->prepare("INSERT INTO articles (name, data) VALUES(?, ?)");
-			return $request->execute([$name, $data]);
+        public function addArticle($subject, $chapter, $author, $name, $data){
+			$request = $this->dbh->prepare("INSERT INTO articles (subject_id, chapter_id, author_id, name, data) VALUES(?, ?, ?, ?, ?)");
+			return $request->execute([$subject, $chapter, $author, $name, $data]);
 		}
 		
 		public function fetchArticle($limit = 10){

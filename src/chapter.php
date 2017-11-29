@@ -49,7 +49,7 @@
                                     </div>
                                 </a>
                             </div>
-                        <?php }
+                        <?php } 
                         }
                     }
                 ?>
@@ -58,7 +58,7 @@
         <div class="side-bar">
             <div class="buttons">
                 <a href="#"  onclick="goBack()" class="btn">Back</a>
-                <a href="#"onclick="addArticle()" class="btn">Add Article</a>
+                <a href="#"onclick="addArticle(<?=isset($subject_id)? $subject_id:0?>, <?=isset($chapter_id)? $chapter_id:0?>, <?=$_SESSION['id']?>)" class="btn">Add Article</a>
             </div>
             <div class="buttons">
                 <a href="#"  onclick="loadQuestions(<?=$id?>)" class="btn">Questions</a>

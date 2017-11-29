@@ -1,14 +1,23 @@
 <?php
-    include("components/header.php");
+	include("components/header.php");
+	if (isset($_GET['sub']) && isset($_GET['chapter']) && isset($_GET['author'])) {
+		$subject = $_GET['sub'];
+		$chapter = $_GET['chapter'];
+		$author = $_GET['author'];
+	}
     if (isset($_POST['name']) && isset($_POST['data'])) {
         $name = $_POST['name'];
         $data = $_POST['data'];
+        $subject = $_POST['subject'];
+        $chapter = $_POST['chapter'];
+        $author = $_POST['author'];
         require_once "libs/article.php";
         $article = new Article($dbh);
-        if (!$article->addArticle($name, $data)) {
+        if (!$article->addArticle($subject, $chapter, $author, $name, $data)) {
             echo "Sorry Post Failed !";
-        }
-        echo "Successfully loaded";
+        }else{
+			echo "Successfully done";
+		}
     }
 ?>
 <!DOCTYPE html>
@@ -25,6 +34,9 @@
 		<form id="postForm" action="addarticle.php" method="POST" enctype="multipart/form-data" onsubmit="return postForm()">
 			<b>Title</b>
 			<input type="text" class="form-control" name="name">
+			<input type="hidden" name="subject" value ="<?=isset($subject)? $subject:0?>">
+			<input type="hidden" name="chapter" value = "<?=isset($chapter)? $chapter:0?>">
+			<input type="hidden" name="author" value = "<?=isset($author)? $author:0?>">
 			<br/>
 			<textarea id="summernote" name="data" rows="10"></textarea>
 			

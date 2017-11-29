@@ -32,7 +32,7 @@
                             <div class="postcard">
                                     <div class="card-image">
                                         <img src="assets/chapter.png" alt="Orange" />
-                                        <div onclick="add2Note(<?=$_SESSION['id']?>,<?=$article->id?>)"" class="plus">+</div>
+                                        <div onclick="add2Note(<?=$_SESSION['id']?>,<?=$article->id?>)"" class="plus"> <i class="fa fa-plus"></i></div>
                                     </div>
                                     <div class="card-body">
                                         <div class="card-title">
