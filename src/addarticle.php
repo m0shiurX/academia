@@ -13,7 +13,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link href="css/summernote.css" rel="stylesheet">
 <body>
