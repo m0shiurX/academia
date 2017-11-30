@@ -30,8 +30,7 @@
 			
 			<br/>
 			<button type="submit" class="btn btn-primary">Submit</button>
-			<button type="button" onclick="window.close()" id="cancel" class="btn">Cancel</button>
-		    
+            <button type="button" id="cancel" onclick="javascript:window.close()" class="btn btn-danger">Close</button>
 		</form>
 		</div>
 		</div>
