@@ -5,5 +5,5 @@
 	
 	define("DS", DIRECTORY_SEPARATOR);
     define('ROOT', __DIR__.'/');
-	define("SITE_PATH","/academia/app/src/"); 
+	define("SITE_PATH","/academia/src/"); 
 	
